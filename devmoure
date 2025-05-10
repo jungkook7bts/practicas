@@ -1,0 +1,87 @@
+// 1. Imprime un mensaje que diga tu nombre en lugar de "¡Hola Mundo!".
+        //2. Imprime dos líneas: "Hola" y luego "Mundo" con un solo println.
+       //  3. Añade un comentario sobre lo que hace cada línea del programa.
+        // 4. Crea un comentario en varias líneas.
+        // 5. Imprime tu edad, tu color favorito y tu ciudad.
+        // 6. Explora los diferentes System.XXX.println(); más allá de "out".
+        // 7. Utiliza varios println para imprimir una frase.
+        // 8. Imprime un diseño ASCII (por ejemplo, una cara feliz usando símbolos).
+        // 9. Intenta ejecutar el programa sin el método main y observa el error.
+        //10. Intenta cambiar el nombre del archivo a uno diferente del de la clase y compílalo. ¿Qué pasa?
+        //variables :
+        //  1. Declara una variable de tipo String y asígnale tu nombre.
+       //  2. Crea una variable de tipo int y asígnale tu edad.
+        // 3. Crea una variable double con tu altura en metros.
+        // 4. Declara una variable de tipo boolean que indique si te gusta programar.
+       // 5. Declara una constante con tu email.
+        // 6. Crea una variable de tipo char y guárdale tu inicial.
+         //7. Declara una variable de tipo String con tu localidad, y a continuación cambia su valor y vuelve a imprimirla.
+         //  8. Crea una variable int llamada a, otra b, e imprime la suma de ambas.
+          // 9. Imprime el tipo de dos variables creadas anteriormente.
+          //10. Intenta declarar una variable sin inicializarla y luego asígnale un valor antes de imprimirla.
+          //operadores
+          // 1. Crea una variable con el resultado de cada operación aritmética.
+        // 2. Crea una variable para cada tipo de operación de asignación.
+        // 3. Imprime 3 comparaciones verdaderas con diferentes operadores de comparación.
+        // 4. Imprime 3 comparaciones falsas con diferentes operadores de comparación.
+        // 5. Utiliza el operador lógico and.
+        // 6. Utiliza el operador lógico or.
+        // 7. Combina ambos operadores lógicos.
+        // 8. Añade alguna negación.
+        // 9. Imprime 3 ejemplos de uso de operadores unarios.
+        // 10. Combina operadores aritméticos, de comparación y lógicos.
+        //String
+        // 1. Concatena dos cadenas de texto.
+        // 2. Muestra la longitud de una cadena de texto.
+        // 3. Muestra el primer y último carácter de un string.
+        // 4. Convierte a mayúsculas y minúsculas un string.
+        // 5. Comprueba si una cadena de texto contiene una palabra concreta.
+        // 6. Formatea un string con un entero.
+        // 7. Elimina los espacios en blanco al principio y final de un string.
+        // 8. Sustituye todos los espacios en blanco de un string por un guión (-).
+        // 9. Comprueba si dos strings son iguales.
+        // 10. Comprueba si dos strings tienen la misma longitud.
+        //condicionales :
+        // 1. Establece la edad de un usuario y muestra si puede votar (mayor o igual a 18).
+        // 2. Declara dos números y muestra cuál es mayor, o si son iguales.
+        // 3. Dado un número, verifica si es positivo, negativo o cero.
+        // 4. Crea un programa que diga si un número es par o impar.
+        // 5. Verifica si un número está en el rango de 1 a 100.
+        // 6. Declara una variable con el día de la semana (1-7) y muestra su nombre con switch.
+        // 7. Simula un sistema de notas: muestra "Sobresaliente", "Aprobado" o "Suspenso" según la nota (0-100).
+        // 8. Escribe un programa que determine si puedes entrar al cine: debes tener al menos 15 años o ir acompañado.
+        // 9. Crea un programa que diga si una letra es vocal o consonante.
+        // 10. Usa tres variables a, b, c y muestra cuál es el mayor de las tres.
+        //estructuras :
+        // 1. Crea un Array con 5 valores e imprime su longitud.
+        // 2. Modifica uno de los valores del Array e imprime el valor del índice antes y después de modificarlo.
+        // 3. Crea un ArrayList vacío.
+        // 4. Añade 4 valores al ArrayList y elimina uno a continuación.
+        // 5. Crea un HashSet con 2 valores diferentes.
+        // 6. Añade un nuevo valor repetido y otro sin repetir al HashSet.
+        // 7. Elimina uno de los elementos del HashSet.
+        // 8. Crea un HashMap donde la clave sea un nombre y el valor el número de teléfono. Añade tres contactos.
+        // 9. Modifica uno de los contactos y elimina otro.
+        // 10. Dado un Array, transfórmalo en un ArrayList, a continuación en un HashSet y finalmente en un HashMap con clave y valor iguales.
+        //loop :
+        // 1. Imprime los números del 1 al 10 usando while.
+        // 2. Usa do-while para mostrar todos los valores de un ArrayList.
+        // 3. Imprime los múltiplos de 5 del 1 al 50 usando for.
+        // 4. Recorre un Array de 5 números e imprime la suma total.
+        // 5. Usa un for para recorrer un Array y mostrar sus valores.
+        // 6. Usa for-each para recorrer un HashSet y un HashMap.
+        // 7. Imprime los números del 10 al 1 (descendiente) con un bucle for.
+        // 8. Usa continue para saltar los múltiplos de 3 del 1 al 20.
+        // 9. Usa break para detener un bucle cuando encuentres un número negativo en un array.
+        // 10. Crea un programa que calcule el factorial de un número dado.
+        //funciones :
+        // 1. Crea una función que imprima "¡Te doy la bienvenida al curso de Java desde cero!".
+        // 2. Escribe una función que reciba un nombre como parámetro y salude a esa persona.
+        // 3. Haz un método que reciba dos números enteros y devuelva su resta.
+        // 4. Crea un método que calcule el cuadrado de un número (n * n).
+        // 5. Escribe una función que reciba un número y diga si es par o impar.
+        // 6. Crea un método que reciba una edad y retorne true si es mayor de edad (y false en caso contrario).
+        // 7. Implementa una función que reciba una cadena y retorne su longitud.
+        //  8. Crea un método que reciba un array de enteros, calcula su media y lo retorna.
+        // 9. Escribe un método que reciba un número y retorna su factorial.
+        // 10. Crea una función que reciba un ArrayList<String> y lo recorra mostrando cada elemento.
