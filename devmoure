@@ -85,3 +85,89 @@
         //  8. Crea un método que reciba un array de enteros, calcula su media y lo retorna.
         // 9. Escribe un método que reciba un número y retorna su factorial.
         // 10. Crea una función que reciba un ArrayList<String> y lo recorra mostrando cada elemento.
+
+// 1. Imprime un mensaje que diga tu nombre en lugar de "¡Hola Mundo!".
+      System.out.println("abi");
+      
+        //2. Imprime dos líneas: "Hola" y luego "Mundo" con un solo println.
+        System.out.println("hola\nmundo");
+        
+       //  3. Añade un comentario sobre lo que hace cada línea del programa.
+       //primero Imprime un nombre y luego Imprime dos palabras 
+       
+       
+        // 4. Crea un comentario en varias líneas.
+        /*comentario de
+        varias lineas*/
+        
+        // 5. Imprime tu edad, tu color favorito y tu ciudad.
+        System.out.println("20");
+        System.out.println("azul");
+        System.out.println("buenos aires");
+        
+        // 6. Explora los diferentes System.XXX.println(); más allá de "out".
+        int num=42;
+        String si = "no";
+        System.out.printf("numero: %d, si o no ?: %s\n" , num, si);
+        System.err.println("¡ocurrio un error!");
+        
+        // 7. Utiliza varios println para imprimir una frase.
+        System.out.println("una");
+        System.out.println("frase");
+        
+        // 8. Imprime un diseño ASCII (por ejemplo, una cara feliz usando símbolos).
+        System.out.println(" (\\_/) ");
+        System.out.println(" ( •_•)");
+        System.out.println("/ >🌸   ");
+        
+        // 9. Intenta ejecutar el programa sin el método main y observa el error.
+        /*no funciona porque porque Java necesita un punto de entrada para comenzar la ejecución
+        del programa. El método main es ese punto de entrada */
+        
+        //10. Intenta cambiar el nombre del archivo a uno diferente del de la clase y compílalo. ¿Qué pasa?
+       // deben coincidor porque java utiliza el nombre del archivo para crear el archivo de clase//
+       
+        //variables :
+        //  1. Declara una variable de tipo String y asígnale tu nombre.
+        String name = "abi";
+       //  2. Crea una variable de tipo int y asígnale tu edad.
+        int age = 20;
+       
+        // 3. Crea una variable double con tu altura en metros.
+        double tall = 1.58;
+        
+        // 4. Declara una variable de tipo boolean que indique si te gusta programar.
+        boolean likeProgram = true;
+        
+       // 5. Declara una constante con tu email.
+       final String GMAIL = "abif788@gmail.com";
+       
+      // 6. Crea una variable de tipo char y guárdale tu inicial.
+      char inicial = 'A';
+      //7. Declara una variable de tipo String con tu localidad, y a continuación cambia su valor y vuelve a imprimirla.
+      String localidad = "miami";
+      System.out.println(localidad);
+      localidad = "california";
+      System.out.println(localidad);
+      //  8. Crea una variable int llamada a, otra b, e imprime la suma de ambas.
+      int a = 7;
+      int b = 9;
+      int suma = a + b;
+      System.out.println(suma);
+      
+      // 9. Imprime el tipo de dos variables creadas anteriormente.
+      System.out.println(localidad.getClass().getSimpleName());
+      //int y double son primiitivos y no funcionan con este metodo, solo clases y objetos
+      
+      //10. Intenta declarar una variable sin inicializarla y luego asígnale un valor antes de imprimirla.
+  
+  
+
+
+
+
+
+
+
+
+
