@@ -158,8 +158,51 @@
       // 9. Imprime el tipo de dos variables creadas anteriormente.
       System.out.println(localidad.getClass().getSimpleName());
       //int y double son primiitivos y no funcionan con este metodo, solo clases y objetos
+
+     //10. Intenta declarar una variable sin inicializarla y luego asígnale un valor antes de imprimirla.
+      String name;
+      name = "ali";
+      System.out.println(name);
+
+      //operadores
+      // 1. Crea una variable con el resultado de cada operación aritmética.
+      int h = 14;
+      int k = 28;
+      int suma = h + k;
+      int resta = h - k;
+      int multi = h * k;
+      double division = h / k;
+      double restoModulo = h % k;
+      double exponentePotencia = Math.pow(h, k);
       
-      //10. Intenta declarar una variable sin inicializarla y luego asígnale un valor antes de imprimirla.
+      System.out.println("Suma: " + suma);
+        System.out.println("Resta: " + resta);
+        System.out.println("Multiplicación: " + multi);
+        System.out.println("División: " + division);
+        System.out.println("Módulo: " + restoModulo);
+        System.out.println("Potencia: " + exponentePotencia);
+      
+      // 2. Crea una variable para cada tipo de operación de asignación.
+      int j = 36;
+      int sum = 35;
+       sum += j;
+       int rest = 35;
+      rest -= j;
+      int multip = 35;
+      multip *= j;
+      double div = 24;
+      div /= j;
+      int resto= 2;
+      resto %= j;
+      double poten = 3;
+      poten = Math.pow(poten, j);
+      System.out.println("+= : " + sum);
+        System.out.println("-= : " + rest);
+        System.out.println("*= : " + multip);
+        System.out.println("/= : " + div);
+        System.out.println("%= : " + resto);
+        System.out.println("**= (Math.pow): " + poten);
+      
   
   
 
