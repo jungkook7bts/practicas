@@ -1,35 +1,3 @@
-// 1. Imprime un mensaje que diga tu nombre en lugar de "¡Hola Mundo!".
-        //2. Imprime dos líneas: "Hola" y luego "Mundo" con un solo println.
-       //  3. Añade un comentario sobre lo que hace cada línea del programa.
-        // 4. Crea un comentario en varias líneas.
-        // 5. Imprime tu edad, tu color favorito y tu ciudad.
-        // 6. Explora los diferentes System.XXX.println(); más allá de "out".
-        // 7. Utiliza varios println para imprimir una frase.
-        // 8. Imprime un diseño ASCII (por ejemplo, una cara feliz usando símbolos).
-        // 9. Intenta ejecutar el programa sin el método main y observa el error.
-        //10. Intenta cambiar el nombre del archivo a uno diferente del de la clase y compílalo. ¿Qué pasa?
-        //variables :
-        //  1. Declara una variable de tipo String y asígnale tu nombre.
-       //  2. Crea una variable de tipo int y asígnale tu edad.
-        // 3. Crea una variable double con tu altura en metros.
-        // 4. Declara una variable de tipo boolean que indique si te gusta programar.
-       // 5. Declara una constante con tu email.
-        // 6. Crea una variable de tipo char y guárdale tu inicial.
-         //7. Declara una variable de tipo String con tu localidad, y a continuación cambia su valor y vuelve a imprimirla.
-         //  8. Crea una variable int llamada a, otra b, e imprime la suma de ambas.
-          // 9. Imprime el tipo de dos variables creadas anteriormente.
-          //10. Intenta declarar una variable sin inicializarla y luego asígnale un valor antes de imprimirla.
-          //operadores
-          // 1. Crea una variable con el resultado de cada operación aritmética.
-        // 2. Crea una variable para cada tipo de operación de asignación.
-        // 3. Imprime 3 comparaciones verdaderas con diferentes operadores de comparación.
-        // 4. Imprime 3 comparaciones falsas con diferentes operadores de comparación.
-        // 5. Utiliza el operador lógico and.
-        // 6. Utiliza el operador lógico or.
-        // 7. Combina ambos operadores lógicos.
-        // 8. Añade alguna negación.
-        // 9. Imprime 3 ejemplos de uso de operadores unarios.
-        // 10. Combina operadores aritméticos, de comparación y lógicos.
         //String
         // 1. Concatena dos cadenas de texto.
         // 2. Muestra la longitud de una cadena de texto.
@@ -202,6 +170,48 @@
         System.out.println("/= : " + div);
         System.out.println("%= : " + resto);
         System.out.println("**= (Math.pow): " + poten);
+
+// 3. Imprime 3 comparaciones verdaderas con diferentes operadores de comparación.
+      var a = 5;
+      var b = 7;
+      System.out.println(a < b);
+      System.out.println(a <= b);
+      System.out.println(a != b);
+      
+     // 4. Imprime 3 comparaciones falsas con diferentes operadores de comparación.
+     System.out.println(a > b);
+     System.out.println(a == b);
+     System.out.println(a >= b);
+     
+        
+     // 5. Utiliza el operador lógico and.
+     System.out.println(true && false);
+     System.out.println(true && true);
+        
+     // 6. Utiliza el operador lógico or.
+     System.out.println(true || false);
+     System.out.println(false || false);
+     System.out.println(true || true);
+        
+   // 7. Combina ambos operadores lógicos.
+   System.out.println(6 < 4 || 5 >= 3 && 7 != 5);
+        
+    // 8. Añade alguna negación.
+    System.out.println(!true);
+    System.out.println(!(5>=3));
+    System.out.println(!(3 > 5));
+        
+    // 9. Imprime 3 ejemplos de uso de operadores unarios.
+    var c = 8;
+    System.out.println(++c);
+    System.out.println(+c);
+    System.out.println(--c);
+    System.out.println(++c);
+        
+   // 10. Combina operadores aritméticos, de comparación y lógicos.
+   System.out.println(5 * 6 < 8 + 4 || 4 + 4 == 4 + 4);
+   System.out.println(8 - 5 == 3 || !(4 + 7 > 20) && 6 * 6 < 7 * 7);
+
       
   
   
