@@ -53,6 +53,18 @@
         //  8. Crea un método que reciba un array de enteros, calcula su media y lo retorna.
         // 9. Escribe un método que reciba un número y retorna su factorial.
         // 10. Crea una función que reciba un ArrayList<String> y lo recorra mostrando cada elemento.
+        //clases 
+        // 1. Crea una clase Book con atributos title y author. Crea un objeto y muestra sus datos.
+        // 2. Crea una clase Dog con un método bark() que imprima su sonido.
+        // 3. Añade un constructor a la clase Book que reciba title y author.
+        // 4. Crea una clase Car con atributos brand y model y un método showData().
+        // 5. Crea una clase Student con atributo score y un método que diga si aprobó (mayor o igual a 60).
+        // 6. Crea una clase BankAccount con atributo balance y un método deposit() que sume el saldo.
+        // 7. Crea una clase Rectangle con métodos para calcular el área y el perímetro.
+        // 8. Crea una clase Worker que reciba nombre y salario, y un método para mostrar su salario.
+        // 9. Crea varios objetos Person y guárdalos en un ArrayList.
+        // 10. Crea una clase Product y un método que aplique un descuento sobre su precio.
+
 
 // 1. Imprime un mensaje que diga tu nombre en lugar de "¡Hola Mundo!".
       System.out.println("abi");
@@ -238,7 +250,8 @@
       int[] calculation = {23, 45, 65, 78};
       boolean data = (calculation[2] * calculation[1] < calculation[3] * calculation[0]);
       System.out.println(data);
-      
+
+      //Strings
        // 1. Concatena dos cadenas de texto.
         String book = "arena del mar";
         String autor = "andes";
@@ -255,6 +268,25 @@
         System.out.println(autor.toLowerCase());
         // 5. Comprueba si una cadena de texto contiene una palabra concreta.
         System.out.println(book.contains("del"));
+        // 6. Formatea un string con un entero.
+        int edad1 = 18;
+        System.out.println(String.format("tu edad es: %d", edad1));
+        String  name = "marisa";
+        int edad2 = 24; 
+        System.out.println(String.format("hola, %s. tu edad es: %d.", name, edad2));
+        // 7. Elimina los espacios en blanco al principio y final de un string.
+        System.out.println(" hola, hoy es un gran dia ".trim());
+        // 8. Sustituye todos los espacios en blanco de un string por un guión (-).
+        System.out.println(" hola, que tal ". replace(" ", "-"));
+        // 9. Comprueba si dos strings son iguales.
+        var c = "hola";
+        var d = "hola";
+        System.out.println(c == d);
+        System.out.println(c.equals(d));
+        // 10. Comprueba si dos strings tienen la misma longitud.
+        var f = "ballena azul";
+        var g = "pajaro azul";
+        System.out.println(f.length() == g.length());
         
       
       
