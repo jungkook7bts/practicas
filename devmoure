@@ -212,6 +212,51 @@
    System.out.println(5 * 6 < 8 + 4 || 4 + 4 == 4 + 4);
    System.out.println(8 - 5 == 3 || !(4 + 7 > 20) && 6 * 6 < 7 * 7);
 
+ //Arrays con operadores
+      int[] edades = {18, 20, 24};
+      
+      if(edades[0] < edades[1] && edades[2] > edades[1]) {
+        System.out.println("condiciones cumplidas");
+      } 
+      System.out.println("--------------------------------");
+      
+      final int maria = 0;
+      final int ana = 1;
+      
+      int[] age = {23, 45};
+      if(age[maria] < age[ana]) {
+        System.out.println("Maria es menor que Ana");
+      }
+      System.out.println("-------------------------------");
+      //inicializo el array
+      int[] numbers = {35, 56, 24, 47};
+      //guardo el resultado en un var boolean y evaluo por medio de operadores
+      boolean result = (numbers[0] != numbers[1]) || (numbers[2] <= numbers[3]);
+      //imprimo el resultado
+      System.out.println(result);
+      System.out.println("-------------------------------");
+      int[] calculation = {23, 45, 65, 78};
+      boolean data = (calculation[2] * calculation[1] < calculation[3] * calculation[0]);
+      System.out.println(data);
+      
+       // 1. Concatena dos cadenas de texto.
+        String book = "arena del mar";
+        String autor = "andes";
+        System.out.println(book + " by " + autor);
+        // 2. Muestra la longitud de una cadena de texto.
+        //13
+        System.out.println(book.length());
+        // 3. Muestra el primer y último carácter de un string.
+        System.out.println(book.charAt(0)); //primer
+        System.out.println(book.charAt(book.length()-1)); //ultimo
+        System.out.println(book.substring(0, 5)); //subcadena
+        // 4. Convierte a mayúsculas y minúsculas un string.
+        System.out.println(autor.toUpperCase());
+        System.out.println(autor.toLowerCase());
+        // 5. Comprueba si una cadena de texto contiene una palabra concreta.
+        System.out.println(book.contains("del"));
+        
+      
       
   
   
