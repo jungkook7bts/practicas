@@ -1,1 +1,63 @@
 //aca van a ir los proyectos para el portafolio 
+lo ideal es tener proyectos que demuestren tanto tu capacidad técnica como tu lógica de programación
+****Proyectos Básicos - Para mostrar lógica y estructura****
+   1- Gestor de tareas (To-Do App)
+     (CRUD básico (crear, leer, actualizar, eliminar tareas).
+     Interfaz con consola o Swing/JavaFX.)
+  2- Agenda de contactos
+     (Guarda contactos con nombre, teléfono, email.
+     Usa archivos o base de datos para persistencia.)
+  3- Juego de consola (Adivina el número, Tres en raya, etc.)
+     (Ideal para mostrar control de flujo y estructuras).
+****Proyectos Intermedios - Para mostrar integración y diseño***
+      4-Sistema de gestión para tienda o stock
+       (Productos, ventas, clientes, reportes.
+       Puedes usar MySQL + JDBC o Spring Boot + JPA.)
+     5-Blog o mini red social
+       (Registro de usuarios, publicaciones, comentarios.
+       Interfaz web con Spring Boot + Thymeleaf o APIs REST + frontend separado.)
+     6-Aplicación de gastos personales
+       (Control de ingresos/gastos, estadísticas.
+       Buen proyecto para aplicar patrones de diseño.).
+****Proyectos Avanzados - Para destacar realmente****
+    7-API REST completa con Spring Boot
+     (Incluye autenticación (JWT), relaciones entre entidades, validaciones, documentación con Swagger.
+    8-Clon de una app popular (ej: Trello, Spotify, Reddit))
+      (Adaptado a tus recursos, pero muestra que sabés estructurar un proyecto grande.)
+    9-Proyecto con arquitectura en capas y pruebas automatizadas
+     (Muestra que sabés trabajar como en una empresa: DAO, servicios, controladores, pruebas unitarias con JUnit.)
+*****
+Extras que suman mucho
+Subir los proyectos a GitHub con README bien escrito.
+Usar herramientas como Maven o Gradle.
+Deploy en Heroku, Render o algún servidor gratuito.
+Documentación técnica o video corto explicando cómo funciona.
+*******
+1. Proyectos simples con IA básica
+----Chatbot con lógica de decisiones
+Podés hacer uno con reglas o árboles de decisión usando Java puro.
+Ideal para mostrar estructuras, lógica e interacción.
+-----Reconocedor de texto con ML simple
+Usá una librería como Weka o DeepLearning4j para entrenar un modelo con datos pequeños (por ejemplo, clasificar correos como spam o no).
+2. Proyectos con librerías de machine learning para Java
+----Weka: Muy buena para principiantes. Podés hacer clasificación, regresión, clustering, etc.
+Proyecto ejemplo: Clasificador de sentimientos (positivo/negativo) de textos cortos.
+-----DeepLearning4j: Para redes neuronales. Ideal si querés mostrar algo más técnico.
+Proyecto ejemplo: Reconocimiento de dígitos con dataset MNIST.
+ 3. IA aplicada a juegos o lógica
+-----IA para un juego (como 3 en raya, damas o ajedrez simple)
+Podés implementar algoritmos como Minimax o IA por búsqueda.
+Demuestra muy bien tu capacidad de pensar algorítmicamente.
+4. Usar APIs externas de IA desde Java
+-----Usar GPT (como ChatGPT) o APIs de visión por computadora
+Podés hacer una app Java que consuma una API de OpenAI o Google Vision.
+Proyecto ejemplo: Una app de escritorio donde subís una imagen y te describe lo que ve usando una API.
+****
+Consejos para que se vea profesional
+. Documentá el funcionamiento, los datos usados y los resultados.
+. Subí los datasets usados (si son pequeños) o dejá links.
+. Mostrá ejemplos reales del comportamiento de tu IA.
+. Hacelo visual si podés (con gráficos o interfaz).
+
+
+
