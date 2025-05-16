@@ -53,7 +53,83 @@
         // 8. Crea una clase Worker que reciba nombre y salario, y un método para mostrar su salario.
         // 9. Crea varios objetos Person y guárdalos en un ArrayList.
         // 10. Crea una clase Product y un método que aplique un descuento sobre su precio.
+----------------------------------------------------------------------------------------------------
+Silvia, la Product Owner, tiene en el backlog* una serie de pedidos del cliente:
 
+Los nombres de algunos productos vienen con espacios extra o en mayúsculas y minúsculas
+inconsistentes. Es necesario limpiar y formatear esos nombres antes de mostrarlos al cliente.
+
+El catálogo de productos empieza a crecer, y almacenar los nombres en variables sueltas ya no es
+práctico. Necesitan una estructura que permita agruparlos. Primero probarán con arrays, pero pronto
+notarán las limitaciones.
+
+Finalmente, para agregar y quitar productos fácilmente del catálogo, un ArrayList será la solución.
+Además, Sabrina y Matías quieren filtrar, buscar y modificar productos de forma dinámica.
+Para poder llegar con los tiempos de entrega dispuestos por Silvia, será necesario realizar las siguientes acciones:
+
+Manipulación de Cadenas:
+
+Dada una cadena " té CHAi ", formateala para que quede
+"Té Chai".
+
+Mostrá su longitud, su primera letra y verificá si
+contiene la palabra "Chai".
+
+Arrays:
+
+Creá un array de 5 productos.
+
+Imprimí sus elementos y luego intentá agregar un sexto
+producto (analizá el resultado).
+
+ArrayList:
+
+Creá un ArrayList<String> para productos.
+
+Agregá varios productos, eliminá uno, verificá si otro
+existe y luego imprimí la lista final.
+
+Combinar Cadenas y Listas:
+
+Tené una lista de productos con nombres desprolijos.
+
+Creá un método que recorra la lista y aplique el
+formateo a cada nombre, volviendo a imprimir la lista
+con nombres prolijos.
+------------------------------------------------------------------------------------------------------
+Se necesita añadir un nuevo producto "Café Descafeinado" al catálogo digital debido a la creciente demanda de los
+clientes y se decide que "Chocolate Amargo 80%" ya no estará disponible
+-----------------------------------------------------------------------------------------------------------
+En TechLab, Silvia (Product Owner) ha recibido nuevas solicitudes del cliente “Sibelius”. El equipo de desarrollo (Matías y Sabrina) se enfrenta
+a varios pequeños problemas cotidianos del proyecto de e-commerce. Cada uno de estos problemas se resolverá aplicando un concepto de
+programación. Los problemas que enfrentaremos en TalentoLab esta semana son los siguientes:
+Necesitamos llevar un registro del stock de productos.
+El cliente quiere saber el costo total de un pedido sumando el precio unitario por la cantidad de productos.
+Requerimos solicitar datos al cliente para personalizar la experiencia.
+Debemos verificar si tenemos suficiente stock para cubrir una demanda específica.
+Hay que procesar una lista de productos pendientes de revisión. Primero intentaremos una solución con while y luego notaremos que for
+podría ser más elegante.
+Variables y Operadores:
+Creá variables para representar el precio de un producto y la
+cantidad deseada por el cliente. Calculá y mostrale en pantalla el
+costo total.
+Modificá el precio o la cantidad y verificá el resultado.
+Entrada y Salida de Datos:
+Pedile al usuario que ingrese su nombre y la cantidad de
+productos que quiere comprar.
+Mostrá un mensaje personalizado con el monto total (asignando
+un precio fijo por unidad).
+
+Condicionales:
+Suponé que si el cliente quiere más de 100 unidades, le ofrecemos
+un descuento.
+Implementá un if que verifique si cantidad > 100. Si es así, mostrá
+un mensaje indicando que aplica un descuento especial.
+Bucles:
+Pedile al usuario que ingrese un número, y luego usá un bucle for
+para imprimir desde 1 hasta ese número.
+Repetí lo mismo con un while y compará cuál te resulta más intuitivo.
+--------------------------------------------------------------------------------------------
 
 // 1. Imprime un mensaje que diga tu nombre en lugar de "¡Hola Mundo!".
       System.out.println("abi");
