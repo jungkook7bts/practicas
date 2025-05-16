@@ -1,1 +1,537 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+// Clase principal del programa
+public class Main {
+    // Lista que almacena objetos de tipo Articulo
+    static ArrayList<Articulo> lista = new ArrayList<>();
+    // Scanner para entrada de datos por consola
+    static Scanner sc = new Scanner(System.in);
+
+    // Método principal
+    public static void main(String[] args) {
+        int opcion;
+        // Bucle principal del programa con menú interactivo
+        do {
+            System.out.println("\n--- Menú de Artículos ---");
+            System.out.println("1. Crear artículo");
+            System.out.println("2. Listar artículos");
+            System.out.println("3. Modificar artículo");
+            System.out.println("4. Eliminar artículo");
+            System.out.println("5. Salir");
+            System.out.print("Seleccione una opción: ");
+            opcion = sc.nextInt();         // Leer opción del usuario
+            sc.nextLine();                 // Limpiar buffer del scanner
+
+            // Estructura switch para manejar las opciones
+            switch (opcion) {
+                case 1 -> crearArticulo();
+                case 2 -> listarArticulos();
+                case 3 -> modificarArticulo();
+                case 4 -> eliminarArticulo();
+                case 5 -> System.out.println("Saliendo...");
+                default -> System.out.println("Opción inválida");
+            }
+        } while (opcion != 5); // Repetir hasta que el usuario elija salir
+    }
+
+    // Método para crear un nuevo artículo
+    public static void crearArticulo() {
+        System.out.print("ID: ");
+        int id = sc.nextInt(); sc.nextLine();     // Leer ID
+        System.out.print("Nombre: ");
+        String nombre = sc.nextLine();            // Leer nombre
+        System.out.print("Precio: ");
+        double precio = sc.nextDouble();          // Leer precio
+
+        // Crear un nuevo objeto Articulo y agregarlo a la lista
+        Articulo nuevo = new Articulo(id, nombre, precio);
+        lista.add(nuevo);
+        System.out.println("Artículo agregado.");
+    }
+
+    // Método para mostrar todos los artículos de la lista
+    public static void listarArticulos() {
+        if (lista.isEmpty()) {
+            System.out.println("No hay artículos cargados.");
+        } else {
+            for (Articulo a : lista) {
+                a.mostrar();   // Llamada polimórfica al método mostrar()
+            }
+        }
+    }
+
+    // Método para modificar un artículo existente
+    public static void modificarArticulo() {
+        System.out.print("ID del artículo a modificar: ");
+        int id = sc.nextInt();
+        for (Articulo articulo : lista) {
+            if (articulo.getId() == id) {
+                sc.nextLine();
+                System.out.print("Nuevo nombre: ");
+                articulo.setNombre(sc.nextLine());       // Usar setter para cambiar nombre
+                System.out.print("Nuevo precio: ");
+                articulo.setPrecio(sc.nextDouble());  
+                   // Usar setter para cambiar precio
+                System.out.println("Artículo actualizado.");
+                return;
+            }
+        }
+        System.out.println("Artículo no encontrado.");
+    }
+
+    // Método para eliminar un artículo por ID
+    public static void eliminarArticulo() {
+        System.out.print("ID del artículo a eliminar: ");
+        int id = sc.nextInt();
+        // Usamos removeIf con expresión lambda para eliminar por ID
+        lista.removeIf(a -> a.getId() == id);
+        System.out.println("Artículo eliminado si existía.");
+    }
+}
+
+-----------------------------------------------------------------------------------
+
+// Clase base Articulo con encapsulamiento
+public class Articulo {
+    // Atributos privados para aplicar el principio de encapsulamiento
+    private int id;
+    private String nombre;
+    private double precio;
+
+    // Constructor para inicializar el objeto Articulo
+    public Articulo(int id, String nombre, double precio) {
+        this.id = id;               // 'this' refiere al atributo del objeto
+        this.nombre = nombre;
+        this.precio = precio;
+    }
+
+    // Getter para el atributo id (solo lectura)
+    public int getId() {
+        return id;
+    }
+    // no tengo un setter para el id, 
+
+    // Getter para el atributo nombre
+    public String getNombre() {
+        return nombre;
+    }
+
+    // Setter para modificar el nombre
+    public void setNombre(String nombreParametro) {
+        this.nombre = nombreParametro;
+    }
+
+    // Getter para el atributo precio
+    public double getPrecio() {
+        return precio;
+    }
+
+    // Setter para modificar el precio
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
+    // Método para mostrar la información del artículo
+    public void mostrar() {
+        // Este método puede ser sobrescrito por subclases (polimorfismo)
+        System.out.println("ID: " + id + " | Nombre: " + nombre + " | Precio: $" + precio);
+    }
+}
+------------------------------------------------------------------------------------
+// plantilla de un artículo
+public class Articulo {
+    // primero van los atributos del artículo, o del objeto
+    int id;
+    String nombre;
+    double precio;
+
+    // constructor de la clase Articulo
+    // se utiliza para crear un objeto de la clase Articulo
+    // el constructor tiene el mismo nombre que la clase
+    public Articulo(int idParametro, String nombreParametro, double precioParametro) {
+        // LA PALABRA RESERVADA this alude al objeto actual de la clase que se esta llamando
+        // que se esta creando
+        // el objeto cuando se crea en memoria, se le asigna una dirección de memoria
+        this.id = idParametro;
+        this.nombre = nombreParametro;
+        this.precio = precioParametro;
+    }
+
+    void mostrar() {
+        System.out.println("ID: " + this.id + " | Nombre: " + this.nombre + " | Precio: $" + this.precio);
+    }
+}
+-------------------------------------------------------------------------------------------
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+    // que significa static
+    // static significa que la variable pertenece a la clase y no a una instancia de la clase
+    // por lo tanto, se puede acceder a ella sin crear un objeto de la clase
+    // en este caso, la lista de artículos es compartida por todas las instancias de la clase Main
+    // y se puede acceder a ella directamente desde los métodos estáticos
+    // que significa void
+    // void significa que el método no devuelve ningún valor
+    // en este caso, los métodos no devuelven nada porque solo realizan acciones
+    // como crear, listar, modificar o eliminar artículos
+// que significa public 
+    // public significa que el método es accesible desde cualquier parte del programa
+    // en este caso, los métodos son públicos para que puedan ser llamados desde el método main
+    // que significa static void main
+    // static void main es el punto de entrada del programa
+    // es el primer método que se ejecuta cuando se inicia el programa
+    // en este caso, el método main es estático porque no se necesita crear un objeto de la clase Main
+    // para ejecutarlo
+    static ArrayList<Articulo> lista = new ArrayList<>();
+    static Scanner sc = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        int opcion;
+        do {
+            System.out.println("\n--- Menú de Artículos ---");
+            System.out.println("1. Crear artículo");
+            System.out.println("2. Listar artículos");
+            System.out.println("3. Modificar artículo");
+            System.out.println("4. Eliminar artículo");
+            System.out.println("5. Salir");
+            System.out.print("Seleccione una opción: ");
+            opcion = sc.nextInt();
+            sc.nextLine(); // Limpiar buffer
+
+            switch (opcion) {
+                case 1 -> crearArticulo();
+                case 2 -> listarArticulos();
+                case 3 -> modificarArticulo();
+                case 4 -> eliminarArticulo();
+                case 5 -> System.out.println("Saliendo...");
+                default -> System.out.println("Opción inválida");
+            }
+        } while (opcion != 5);
+    }
+
+    public static void crearArticulo() {
+        System.out.print("ID: ");
+        int id = sc.nextInt(); sc.nextLine();
+        System.out.print("Nombre: ");
+        String nombre = sc.nextLine();
+        System.out.print("Precio: ");
+        double precio = sc.nextDouble();
+        //con los datos que le pedimos al usuario, creamos un nuevo objeto de la clase Articulo
+        // y lo agregamos a la lista
+        // tipo de dato nombre = new constructorConcNombreDeLaClase(parametros)
+        // este objeto NO deja de ser una variable, solo que no es una variable primitiva, sino una referencia a un espacio en la memoria
+        // estamos creando una instancia, es decir instanciado un objeto de la clase Articulo
+        // estamos creando un objeto una referencia a un espacio en la memoria
+        // ANTES DE CREAR EL ARTICULO, DEBERIAMOS HACER VALIDACIONES PARA LA PRE ENTREGA
+        // para verificar que el id no exista, que el nombre no sea vacio, que el precio sea mayor a 0
+        Articulo nuevo = new Articulo(id, nombre, precio);
+        lista.add(nuevo);
+        System.out.println("Artículo agregado.");
+    }
+
+    public static void listarArticulos() {
+        if (lista.isEmpty()) {
+            System.out.println("No hay artículos cargados.");
+        } else {
+            for (Articulo articulo : lista) {
+                articulo.mostrar();
+            }
+        }
+    }
+
+    public static void modificarArticulo() {
+        System.out.print("ID del artículo a modificar: ");
+        int id = sc.nextInt();
+        for (Articulo a : lista) {
+            if (a.id == id) {
+                sc.nextLine();
+                System.out.print("Nuevo nombre: ");
+                a.nombre = sc.nextLine();
+                System.out.print("Nuevo precio: ");
+                a.precio = sc.nextDouble();
+                System.out.println("Artículo actualizado.");
+                return;
+            }
+        }
+        System.out.println("Artículo no encontrado.");
+    }
+
+    public static void eliminarArticulo() {
+        System.out.print("ID del artículo a eliminar: ");
+        int idAEliminar = sc.nextInt();
+       // funcion flecha o lambda, estructura de la funcion
+       // parametros -> cuerpo
+        // PARA LA PRE ENTREGA QUE MUESTRE UN MSJ DE ARTICULO NO ENCONTRADO SI NO LOGRA ELIMINAR NINGUN ARTICULO
+        lista.removeIf(articuloLista -> articuloLista.id == idAEliminar);
+        System.out.println("Artículo eliminado si existía.");
+    }
+    // METHOD QUE CONSULTE UN ARTICULO POR SU ID 
+    // close para cerrar el scanner
+    // sc.close();
+    // no es necesario cerrar el scanner en este caso porque el programa termina
+}
+------------------------------------------------------------------------------------
+public class Funciones {
+    // Método simple que no recibe parámetros y no devuelve valor
+    public static void saludar() {
+        System.out.println("¡Hola desde un método!");
+    }
+     // Método que recibe un parámetro y no devuelve valor
+     public static void saludar(String nombre) {
+        System.out.println("¡Hola, " + nombre + "!");
+    }
+     // Método que recibe un parámetro y devuelve un valor
+     public static int sumar(int a, int b) {
+        return a + b; // Devuelve la suma de 'a' y 'b'
+    }
+    // paso de argumentos por valor
+    public static void cambiarValor(int numero) {
+        numero = 100; // Solo se cambia dentro del método
+    }
+    public static void modificarArray(int[] arr) {
+        arr[0] = 999; // Modifica el contenido del array
+    }
+    // sobrecarga del method sumar 
+    public static double sumar(double a, double b) {
+        return a + b; // Devuelve la suma de 'a' y 'b'
+    }
+    // modularizar funciones en pequeñas funcionalidades
+    // Método que pide un número ficticio de un "usuario"
+      public static int obtenerNumero() {
+        return 10; // En lugar de Scanner, retornamos un número para simplificar
+    }
+
+    // Método que realiza un cálculo
+    public static int calcularDoble(int numero) {
+        return numero * 2;
+    }
+     // Método que muestra el resultado
+     public static void mostrarResultado(int resultado) {
+        System.out.println("El doble es: " + resultado);
+    }
+   
+    public static void main(String[] args) {
+        // Llamamos al método 'saludar'
+        saludar(); // Esto imprime un mensaje por consola
+         // Llamamos al método 'saludar' con un argumento
+        saludar("Juan"); // Esto imprime "¡Hola, Juan!"
+         // Llamamos al método 'sumar' y almacenamos el resultado
+        int resultado = sumar(5, 3); // Esto almacena 8 en 'resultado'
+        System.out.println("La suma es: " + resultado); // Imprime "La suma es: 8"
+
+        int x = 5;
+        cambiarValor(x);
+        System.out.println(x); // Imprime 5 → no cambió, porque Java pasa por valor
+
+        int[] numeros = {1, 2, 3};
+        modificarArray(numeros);
+        System.out.println(numeros[0]); // Imprime 999 → sí se modificó
+
+        // llamado al method sumar, pero con valores double
+        System.out.println(sumar(4.5, 2.5));  // Llama al método double → 7.0
+
+        // modularizar
+        int num = obtenerNumero();
+        int doble = calcularDoble(num);
+        mostrarResultado(doble); // Esto modulariza cada paso del proceso
+    }
+}
+-----------------------------------------------------------------------------------------
+import java.util.ArrayList;
+public class ArraysList {
+    /*
+     * ArrayList es una implementación de la interfaz List.
+       Se usa cuando queremos una lista dinámica, con acceso rápido por índice.
+       Ideal para lectura frecuente; no se recomienda si hay muchas inserciones al medio (usar LinkedList en ese caso).
+       Resumen de Métodos útiles (List y ArrayList)
+
+        Método	Descripción
+        add(valor)	Agrega un elemento
+        get(indice)	Obtiene el valor en una posición
+        set(indice, valor)	Modifica un valor en una posición
+        remove(valor/índice)	Elimina por valor o posición
+        contains(valor)	Verifica si existe un valor
+        size()	Devuelve la cantidad de elementos
+        clear()	Vacía la lista
+        isEmpty()	Verifica si está vacía
+        indexOf(valor)	Devuelve la posición de un valor (si no existe, devuelve -1)
+        lastIndexOf(valor)	Devuelve la última posición de un valor (si no existe, devuelve -1)
+        toArray()	Convierte a un array
+        sort()	Ordena la lista (necesita Collections.sort())
+     */
+    public static void main(String[] args) {
+        // Creamos un ArrayList de números enteros
+        ArrayList<Integer> edades = new ArrayList<>();
+
+        // Agregamos elementos
+        edades.add(25);
+        edades.add(30);
+        edades.add(22);
+
+        // Recorremos con for tradicional
+        for (int i = 0; i < edades.size(); i++) {
+            System.out.println("Edad en posición " + i + ": " + edades.get(i));
+        }
+
+        // Modificamos un valor
+        edades.set(1, 35); // Cambia el valor en posición 1
+        System.out.println("Lista después de modificar: " + edades);
+
+       /* edades.set(100,3);
+        System.out.println("Lista después de modificar: " + edades);*/ 
+
+        // Eliminamos un valor por índice
+       /* edades.remove(0); // Elimina el primer valor
+        System.out.println("Lista después de eliminar: " + edades);*/ 
+
+        // Vaciar la lista
+        /*edades.clear();
+        System.out.println("Lista vacía: " + edades);*/
+        // TAREA HACER UN ARRAYLIST SIN TIPO DE DATO
+    }
+}
+    
+    /*
+     * IMPORTANTE
+     *  List es una interfaz
+        Es parte del framework de colecciones de Java.
+
+        Define comportamientos genéricos para listas (como add, remove, get, etc.).
+
+        No se puede instanciar directamente:
+
+        List<String> lista = new List<>(); // ERROR
+        Se utiliza para programar hacia una interfaz, lo cual es una buena práctica.
+
+        ArrayList es una clase concreta
+        Implementa la interfaz List.
+
+        Tiene una estructura basada en array dinámico.
+
+        Se puede instanciar directamente:
+
+        ArrayList<String> lista = new ArrayList<>(); // CORRECTO
+        🧠 Resumen:
+        IMPORTANTE: CUANDO VEAMOS POO ESTO COBRARA SENTIDO
+        Característica	               List (interfaz)	               ArrayList (clase concreta)
+        ¿Se puede instanciar?	          ❌ No	                         ✅ Sí
+        ¿Tiene comportamiento propio?	  ❌ No, solo define	             ✅ Sí, lo implementa
+        ¿Permite flexibilidad?	          ✅ Alta (interfaz)	             🔁 Limitada a su implementación
+        ¿Recomendación?	                Declarar como List	               Usar ArrayList como          implementación concreta
+     */
+---------------------------------------------------------------------------------------------------------------------------------
+import java.util.List;
+import java.util.ArrayList;
+
+public class Listas {
+    /*  Se usan cuando no se conoce el tamaño fijo o necesitamos que crezca dinámicamente.
+        Se recomienda trabajar con List en lugar de ArrayList directamente (principio de programar hacia una interfaz).
+        Se usan mucho para recorrer, filtrar, ordenar colecciones.
+    */
+    public static void main(String[] args) {
+        // Declaramos una lista de Strings (nombres)
+        List<String> nombres = new ArrayList<>();
+        List listaVariada = new ArrayList(); // Lista sin tipo específico
+        System.out.println("Lista variada: " + listaVariada);
+        listaVariada.add("");
+        listaVariada.add(null);
+        listaVariada.add(true);
+        listaVariada.add("Hola");
+        listaVariada.add(123);
+        System.out.println("Lista variada: " + listaVariada);
+        
+
+        // Agregamos elementos a la lista
+        nombres.add("Ana");
+        nombres.add("Luis");
+        nombres.add("Carlos");
+
+        // Imprimimos el contenido con un for-each
+      /*  for (String nombre : nombres) {
+            System.out.println("Nombre: " + nombre);
+        }*/ 
+
+      /* for(Object elemento: listaVariada){
+            System.out.println("Elemento: " + elemento);
+            if(elemento instanceof String){
+                System.out.println("Es un String: " + elemento);
+            } else if (elemento instanceof Integer) {
+                System.out.println("Es un Integer: " + elemento);
+            } else if (elemento instanceof Boolean) {
+                System.out.println("Es un Boolean: " + elemento);
+            } else {
+                System.out.println("Tipo desconocido:" );
+            }
+
+        }*/  
+
+        // Consultamos el tamaño de la lista
+       // System.out.println("Total de nombres: " + nombres.size());
+
+        // Accedemos por índice
+       // System.out.println("Primer nombre: " + nombres.get(0));
+
+        // Verificamos si contiene un valor
+       /* if (nombres.contains("Luis")) {
+            System.out.println("Luis está en la lista.");
+        }*/ 
+
+        // Eliminamos un elemento
+       /* nombres.remove("Carlos");
+        System.out.println("Lista después de eliminar a Carlos: " + nombres);*/ 
+    }
+}
+-------------------------------------------------------------------------------------
+import java.util.Scanner;
+
+public class MenuArticulos {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int opcion = 0;
+
+        while (opcion != 6) {
+            System.out.println("\n----- Menú de Artículos -----");
+            System.out.println("1. Crear un artículo nuevo");
+            System.out.println("2. Consultar un artículo");
+            System.out.println("3. Listar artículos");
+            System.out.println("4. Modificar un artículo");
+            System.out.println("5. Borrar un artículo");
+            System.out.println("6. Salir");
+            System.out.print("Ingrese una opción: ");
+            
+            opcion = scanner.nextInt();
+            
+            switch (opcion) {
+                case 1:
+                    System.out.println("Opción Crear un artículo nuevo seleccionada.");
+                    break;
+                case 2:
+                    System.out.println("Opción Consultar un artículo seleccionada.");
+                    break;
+                case 3:
+                    System.out.println("Opción Listar artículos seleccionada.");
+                    break;
+                case 4:
+                    System.out.println("Opción Modificar un artículo seleccionada.");
+                    break;
+                case 5:
+                    System.out.println("Opción Borrar un artículo seleccionada.");
+                    break;
+                case 6:
+                    System.out.println("Programa finalizado.");
+                    break;
+                default:
+                    System.out.println("Opción inválida. Intente nuevamente.");
+            }
+        }
+
+        scanner.close();
+    }
+}
+------------------------------------------------------------------------------------------------------
+
+
 
