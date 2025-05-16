@@ -1,14 +1,3 @@
-        //String
-        // 1. Concatena dos cadenas de texto.
-        // 2. Muestra la longitud de una cadena de texto.
-        // 3. Muestra el primer y último carácter de un string.
-        // 4. Convierte a mayúsculas y minúsculas un string.
-        // 5. Comprueba si una cadena de texto contiene una palabra concreta.
-        // 6. Formatea un string con un entero.
-        // 7. Elimina los espacios en blanco al principio y final de un string.
-        // 8. Sustituye todos los espacios en blanco de un string por un guión (-).
-        // 9. Comprueba si dos strings son iguales.
-        // 10. Comprueba si dos strings tienen la misma longitud.
         //condicionales :
         // 1. Establece la edad de un usuario y muestra si puede votar (mayor o igual a 18).
         // 2. Declara dos números y muestra cuál es mayor, o si son iguales.
@@ -287,7 +276,98 @@
         var f = "ballena azul";
         var g = "pajaro azul";
         System.out.println(f.length() == g.length());
+
+     // 1. Establece la edad de un usuario y muestra si puede votar (mayor o igual a 18).
+            var edad = 16;
+            if (edad >= 18) {
+              System.out.println("es mayor de edad, puede votar");
+            } else {
+              System.out.println("es menor de edad, no puede votar");
+            }
+        // 2. Declara dos números y muestra cuál es mayor, o si son iguales.
+        int number1 = 26;
+        int number2 = 26;
+        if (number1 > number2){
+          System.out.println("numero 1 es mayor o igual a  numero 2");
+        } else if(number2 > number1) {
+          System.out.println("numero 2 es mayor o igual a numero 1");
+        } else {
+          System.out.println("ambos numeros son iguales");
+        }
         
+        // 3. Dado un número, verifica si es positivo, negativo o cero.
+        int n1 = -12;
+        if(Math.signum(n1) >  0) {
+          System.out.println("es un numero positivo");
+        } else if (Math.signum(n1) < 0) {
+          System.out.println("es un numero negativo");
+        } else {
+          System.out.println("el numero es cero");
+        }
+
+        if (n1 > 0) {
+          System.out.println("es positivo");
+        } else if (n1 < 0) {
+          System.out.println("es negativo");
+        } else {
+          System.out.println("es cero");
+        }
+        
+        // 4. Crea un programa que diga si un número es par o impar.
+        int num2 = 8;
+        if(num2 % 2 == 0) {
+          System.out.println("el numero es par");
+        } else {
+          System.out.println("el numero es impar");
+        }
+        
+        // 5. Verifica si un número está en el rango de 1 a 100.
+        int num3 = 100;
+        int rangoInicial = 1;
+        int rangoFinal = 100;
+        if (num3 >= rangoInicial && num3 <= rangoFinal) {
+          System.out.println("el numero esta dentro del rango de " + rangoInicial + " y " + rangoFinal );
+        } else {
+          System.out.println("no esta deltro del rango");
+        }
+        
+        // 6. Declara una variable con el día de la semana (1-7) y muestra su nombre con switch.
+        int dia = 3;
+        switch(dia) {
+          case 1:
+            System.out.println("lunes");
+            break;
+          case 2:
+            System.out.println("martes");
+            break;
+          case 3: 
+            System.out.println("miercoles");
+            break;
+          case 4:
+            System.out.println("jueves");
+            break;
+          default:
+            System.out.println("no hay fecha");
+        }
+        
+        // 7. Simula un sistema de notas: muestra "Sobresaliente", "Aprobado" o "Suspenso" según la nota (0-100).
+        int nota = 65;
+        if(nota >= 90 && nota <= 100){
+          System.out.println("Sobresaliente");
+        } else if (nota >= 60 && nota < 90) {
+          System.out.println("aprobado");
+        }else if (nota >= 0 && nota < 60) {
+          System.out.println("suspenso");
+        } else {
+          System.out.println("nota invalida");
+        }
+        // 8. Escribe un programa que determine si puedes entrar al cine: debes tener al menos 15 años o ir acompañado.
+        int age = 16;
+        if (age >= 18) {
+          System.out.println("puede entrar al cine");
+        } else {
+          System.out.println("debe ir acompañado");
+        }
       
       
   
