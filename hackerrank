@@ -28,6 +28,43 @@ RESULTADO:
         System.out.println("Double: " + d);
         System.out.println("Int: " + i);
 ---------------------------------------------------------------------------------
+Entrada de datos y formato de salida en Java
+
+Resultado
+Scanner scanner = new Scanner(System.in);
+
+//Un bucle que se repite 3 veces, para leer 3 pares de datos.
+for(int i = 0; i < 3; i++) {
+    String n = scanner.next();
+    int x = scanner.nextInt();
+
+// %03d para enteros con 3 digitos y 0 a la izquierda
+//%-15s: el String (n) se alinea a la izquierda y ocupa exactamente 15 espacios
+    String salida = String.format("%-15s%03d", n, x);
+    System.out.println(salida);
+}
+entrada :
+java 100 
+pc 65
+php 50
+salida: 
+java           100
+pc             065
+php            050
+
+//el usuario ha decidido usar 10 caracteres, yo como programadora he decidido disponerle 15 caracteres 
+//para  que tanto el texto como los numeros se alineen: 10(usuario)-15(espacio)-3(numeros y si es necesario relleno con 0)
+--------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
 
 
 
