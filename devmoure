@@ -1,14 +1,4 @@
-        //condicionales :
-        // 1. Establece la edad de un usuario y muestra si puede votar (mayor o igual a 18).
-        // 2. Declara dos números y muestra cuál es mayor, o si son iguales.
-        // 3. Dado un número, verifica si es positivo, negativo o cero.
-        // 4. Crea un programa que diga si un número es par o impar.
-        // 5. Verifica si un número está en el rango de 1 a 100.
-        // 6. Declara una variable con el día de la semana (1-7) y muestra su nombre con switch.
-        // 7. Simula un sistema de notas: muestra "Sobresaliente", "Aprobado" o "Suspenso" según la nota (0-100).
-        // 8. Escribe un programa que determine si puedes entrar al cine: debes tener al menos 15 años o ir acompañado.
-        // 9. Crea un programa que diga si una letra es vocal o consonante.
-        // 10. Usa tres variables a, b, c y muestra cuál es el mayor de las tres.
+
         //estructuras :
         // 1. Crea un Array con 5 valores e imprime su longitud.
         // 2. Modifica uno de los valores del Array e imprime el valor del índice antes y después de modificarlo.
@@ -316,6 +306,7 @@ Repetí lo mismo con un while y compará cuál te resulta más intuitivo.
       boolean data = (calculation[2] * calculation[1] < calculation[3] * calculation[0]);
       System.out.println(data);
 
+
       //Strings
        // 1. Concatena dos cadenas de texto.
         String book = "arena del mar";
@@ -444,6 +435,55 @@ Repetí lo mismo con un while y compará cuál te resulta más intuitivo.
         } else {
           System.out.println("debe ir acompañado");
         }
+---------------------------------------------------------------
+//IMPRIME EL ABECEDARIO EL "A" TO "Z" :
+ for(char i='a'; i <='z'; i++){
+         System.out.println(i);
+       }
+//imprime sin las vocales (empieza en b)
+ for (char i = 'a'; i <= 'z'; i++) {
+          if ("aeiou".indexOf(i) == -1) {
+          System.out.println(i);
+          }
+      }
+------------------------------------------------------------------
+//9. Crea un programa que diga si una letra es vocal o consonante.
+       var letra = 'u';
+       if (!Character.isLetter(letra)) {
+         //verifica que sea una letra 
+         System.out.println("valor invalido");
+       } else if ("aeiou".indexOf(letra) != -1) {
+         //!= -1 → está en la lista → es vocal
+        //.indexOf(letra) busca la letra dentro del texto "aeiou".Si NO la encuentra, devuelve -1.
+        System.out.println("es vocal");
+       } else {
+         System.out.println("es consonante");
+       }
+      
+        // 10. Usa tres variables a, b, c y muestra cuál es el mayor de las tres.
+        int mayor;
+        String nombre = "";
+        var a = 24;
+        var b = 56;
+        var c = 34;
+        if (a >= b && a >= c) {
+          mayor = a;
+          nombre = "a ";
+        } else if ( b >= a && b >= c) {
+          mayor = b;
+          nombre = "b ";
+        } else {
+          mayor = c;
+          nombre = "c ";
+        }
+        
+        System.out.println("el mayor es " + nombre + mayor);
+        
+        //estructuras :
+        // 1. Crea un Array con 5 valores e imprime su longitud.
+        int[] numbers = {11, 23, 7, 9, 13, 4, 9};
+        System.out.println(numbers.length);
+        
       
       
   
