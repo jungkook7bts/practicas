@@ -483,6 +483,63 @@ Repetí lo mismo con un while y compará cuál te resulta más intuitivo.
         // 1. Crea un Array con 5 valores e imprime su longitud.
         int[] numbers = {11, 23, 7, 9, 13, 4, 9};
         System.out.println(numbers.length);
+----------------------------------------------------------------------------------------
+funciones ejercicio :
+una función se conoce como método. Es un bloque de código que realiza una tarea específica y puede ser llamado o reutilizado en
+diferentes partes del programa. Los métodos permiten modularizar el código, hacerlo más legible y facilitar su mantenimiento. 
+Parámetros:
+Los métodos pueden recibir parámetros (entradas) que les permiten operar con diferentes datos y realizar tareas específicas en función de estos parámetros. 
+Valor de retorno:
+Los métodos pueden devolver un valor como resultado de su ejecución, utilizando la palabra clave return. 
+Modificadores de acceso:
+Los métodos pueden tener modificadores de acceso como public, private, protected o sin modificador, que controlan su visibilidad y accesibilidad desde otras clases. 
+Tipos de métodos:
+Existen métodos estáticos (que pertenecen a la clase y no a una instancia) y métodos de instancia (que pertenecen a una instancia de la clase), además de métodos con y sin retorno.
+Modularidad:
+Los métodos ayudan a dividir un programa grande y complejo en unidades más pequeñas y manejables, lo que facilita la comprensión y el desarrollo
+
+public class Main {
+  
+    public static String esPar(int numero) {
+      if (numero % 2 == 0) {
+        return "es par";
+      } else {
+        return "es impar";
+      }
+      // Acá estás llamando a la función esPar y le estás pasando el valor 4.
+      //Ese valor (4) va a reemplazar el parámetro numero dentro de la función
+  }
+  
+  public static void main (String[] arg) {
+    System.out.println(esPar(4));
+    System.out.println(esPar(5));
+    System.out.println(esPar(8));
+  }
+}
+---------------
+public class main {
+
+  public static String clasificarEdad(int edad){
+       if (edad < 13) {
+         return "es niño ";
+      } else if (edad < 18) {
+         return "es adolescente";
+      } else if (edad < 64) {
+         return "es adulto";
+      } else {
+         return "es una persona mayor";
+      }
+    
+  }
+  
+  public static void main(String[] arg) {
+        System.out.println(clasificarEdad(10)); // Niño/a
+        System.out.println(clasificarEdad(15)); // Adolescente
+        System.out.println(clasificarEdad(30)); // Adulto/a
+        System.out.println(clasificarEdad(70)); // Persona mayor
+  }
+}
+----------------------------------------------------------------------------------
         
       
       
