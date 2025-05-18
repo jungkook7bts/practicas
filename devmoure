@@ -540,8 +540,38 @@ public class main {
   }
 }
 ----------------------------------------------------------------------------------
-        
+ public class persona {
+  //declarar un atributo con modificador private
+  private String nombre;
+
+
+  //metodo  publico paara establecer el nombre 
+  public void setNombre(String nuevoNombre) {
+    this.nombre = nuevoNombre; //se refiere al objeto actual
+  }
+  //metodo publico para obtener el nombre 
+  public String getNombre() {
+    return this.nombre;
+  }
+
+}
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
       
+      //crea un nuevo objeto de la clase persona 
+      //luego llama getNombre para obtenerlo y este esta vacio null
+      persona abi = new persona();
+      //llama al metodo publico setNombre y le da el argumento "abi"
+      abi.setNombre("abi");
+      //primero accede y luego modifica 
+      System.out.println("nombre " + abi.getNombre());
+      
+  }
+}
+---------------------------------------------------------------------------------------      
       
   
   
