@@ -60,4 +60,51 @@ Consejos para que se vea profesional
 . Hacelo visual si podés (con gráficos o interfaz).
 
 
+pre- entrega :
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+  
+  static ArrayList<Articulo> Lista = new ArrayList<>();
+  
+  static Scanner sc = new Scanner(System.in);
+  
+  public static void main(String[] args){
+    int opcion;
+    do {
+      System.out.println("\n-----MENU DE ARTICULOS------");
+      System.out.println("1. Crear articulo");
+      System.out.println("2. Listar articulos");
+      System.out.println("3. Modificar articulos");
+      System.out.println("4. Eliminar articulo");
+      System.out.println("5. Salir");
+      System.out.print("Seleccione una opcion: ");
+      opcion = nextInt();
+      sc.nextLine();
+      
+      switch (opcion) {
+        case 1 -> crearArticulo();
+        case 2 -> listarArticulo();
+        case 3 -> modificarArticulo();
+        case 4 -> eliminarArticulo();
+        case 5 -> System.out.println("saliendo...");
+        default ->System.out.println("opcion invalida");
+      }
+      
+    } while (opcion != 5);
+  }
+  
+}
+--------------
+public class Articulo {
+  String nombre;
+  double precio;
+  
+  public Articulo(String nombre, double precio) {
+    this.nombre = nombre;
+    this.precio = precio;
+  }
+}
+
 
