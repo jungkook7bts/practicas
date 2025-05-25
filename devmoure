@@ -120,7 +120,7 @@ Pedile al usuario que ingrese un número, y luego usá un bucle for
 para imprimir desde 1 hasta ese número.
 Repetí lo mismo con un while y compará cuál te resulta más intuitivo.
 --------------------------------------------------------------------------------------------
-
+----------------------CADENAS DE TEXTOS : 
 // 1. Imprime un mensaje que diga tu nombre en lugar de "¡Hola Mundo!".
       System.out.println("abi");
       
@@ -161,7 +161,8 @@ Repetí lo mismo con un while y compará cuál te resulta más intuitivo.
         
         //10. Intenta cambiar el nombre del archivo a uno diferente del de la clase y compílalo. ¿Qué pasa?
        // deben coincidor porque java utiliza el nombre del archivo para crear el archivo de clase//
-       
+       -------------------------------------------------------------------------------------------
+-----------------------------VARIABLES :
         //variables :
         //  1. Declara una variable de tipo String y asígnale tu nombre.
         String name = "abi";
@@ -198,6 +199,8 @@ Repetí lo mismo con un while y compará cuál te resulta más intuitivo.
       String name;
       name = "ali";
       System.out.println(name);
+---------------------------------------------------------------------------------------
+----------------------OPERADORES :
 
       //operadores
       // 1. Crea una variable con el resultado de cada operación aritmética.
@@ -306,7 +309,8 @@ Repetí lo mismo con un while y compará cuál te resulta más intuitivo.
       boolean data = (calculation[2] * calculation[1] < calculation[3] * calculation[0]);
       System.out.println(data);
 
-
+---------------------------------------------------------------------------------------------
+--------------------------------CADENAS DE TEXTO 2 :
       //Strings
        // 1. Concatena dos cadenas de texto.
         String book = "arena del mar";
@@ -343,6 +347,8 @@ Repetí lo mismo con un while y compará cuál te resulta más intuitivo.
         var f = "ballena azul";
         var g = "pajaro azul";
         System.out.println(f.length() == g.length());
+----------------------------------------------------------------------------------------------
+-------------------------OPERADORES COMPARATIVOS :
 
      // 1. Establece la edad de un usuario y muestra si puede votar (mayor o igual a 18).
             var edad = 16;
@@ -435,7 +441,8 @@ Repetí lo mismo con un while y compará cuál te resulta más intuitivo.
         } else {
           System.out.println("debe ir acompañado");
         }
----------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
+----------------EJERCICIO:
 //IMPRIME EL ABECEDARIO EL "A" TO "Z" :
  for(char i='a'; i <='z'; i++){
          System.out.println(i);
@@ -477,8 +484,9 @@ Repetí lo mismo con un while y compará cuál te resulta más intuitivo.
           nombre = "c ";
         }
         
-        System.out.println("el mayor es " + nombre + mayor);
-        
+        System.out.println("el mayor es " + nombre + mayor)
+------------------------------------------------------------------------------------------------------------
+--------------------ESTRUCTURAS:
         //estructuras :
         // 1. Crea un Array con 5 valores e imprime su longitud.
         int[] numbers = {11, 23, 7, 9, 13, 4, 9};
