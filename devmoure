@@ -1,26 +1,4 @@
 
-        //estructuras :
-        // 1. Crea un Array con 5 valores e imprime su longitud.
-        // 2. Modifica uno de los valores del Array e imprime el valor del índice antes y después de modificarlo.
-        // 3. Crea un ArrayList vacío.
-        // 4. Añade 4 valores al ArrayList y elimina uno a continuación.
-        // 5. Crea un HashSet con 2 valores diferentes.
-        // 6. Añade un nuevo valor repetido y otro sin repetir al HashSet.
-        // 7. Elimina uno de los elementos del HashSet.
-        // 8. Crea un HashMap donde la clave sea un nombre y el valor el número de teléfono. Añade tres contactos.
-        // 9. Modifica uno de los contactos y elimina otro.
-        // 10. Dado un Array, transfórmalo en un ArrayList, a continuación en un HashSet y finalmente en un HashMap con clave y valor iguales.
-        //loop :
-        // 1. Imprime los números del 1 al 10 usando while.
-        // 2. Usa do-while para mostrar todos los valores de un ArrayList.
-        // 3. Imprime los múltiplos de 5 del 1 al 50 usando for.
-        // 4. Recorre un Array de 5 números e imprime la suma total.
-        // 5. Usa un for para recorrer un Array y mostrar sus valores.
-        // 6. Usa for-each para recorrer un HashSet y un HashMap.
-        // 7. Imprime los números del 10 al 1 (descendiente) con un bucle for.
-        // 8. Usa continue para saltar los múltiplos de 3 del 1 al 20.
-        // 9. Usa break para detener un bucle cuando encuentres un número negativo en un array.
-        // 10. Crea un programa que calcule el factorial de un número dado.
         //funciones :
         // 1. Crea una función que imprima "¡Te doy la bienvenida al curso de Java desde cero!".
         // 2. Escribe una función que reciba un nombre como parámetro y salude a esa persona.
@@ -580,7 +558,232 @@ public class Main {
   }
 }
 ---------------------------------------------------------------------------------------      
-      
+      //........................................................................................
+//-------------------------ESTRUCTURAS
+import java.util.*;  //** IMPORTA TODO 
+import java.util.ArrayList; // estos no son redundantes por que el * ya lo importa
+import java.util.List;
+import java.util.HashSet;
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+      // 1. Crea un Array con 5 valores e imprime su longitud.
+        String[] countries = {"Francia", "España","Estados Unidos", "Argentina", "Italia"};
+        System.out.println(countries.length);
+        
+        int[] numbers = {11, 23, 7, 9, 13, 4, 9};
+        System.out.println(numbers.length);
+        // 2. Modifica uno de los valores del Array e imprime el valor del índice antes y después de modificarlo.
+       System.out.println("antes de modificar: " + countries[2]);
+       countries[2] = "Canada";
+       System.out.println("Despues de modificar: " + countries[2]);
+       //**System.out.println(countries);**no es posible imprimir un array en java
+       
+        // 3. Crea un ArrayList vacío.
+        ArrayList<String> name = new ArrayList<>();
+        ArrayList<Integer> number = new ArrayList<>();
+        System.out.println("Arraylist vacio: " + name);
+        // 4. Añade 4 valores al ArrayList y elimina uno a continuación.
+        name.add("marisa");
+        name.add("zeyran");
+        number.add(15);
+        number.add(25);
+        System.out.println(name);
+        System.out.println(number);
+        name.remove(0);
+        number.remove(0);
+        System.out.println(name.size());
+        System.out.println(number.size());
+        System.out.println(name);
+        System.out.println(number);
+        // 5. Crea un HashSet con 2 valores diferentes.
+            //--No permite elementos duplicados.
+            //No garantiza el orden de los elementos (no es como un array que tiene índices).
+           //Es muy rápido para buscar, agregar y eliminar elementos.
+            //Se usa mucho cuando querés guardar cosas únicas, como una lista de nombres donde no se repita ninguno.
+        HashSet<String> frutas = new HashSet<>();
+        HashSet<Integer> chapter = new HashSet<>();
+        frutas.add("manzana");
+        frutas.add("pera");
+        chapter.add(3);
+        chapter.add(6);
+        System.out.println("frutas: " + frutas);
+        System.out.println("chapter: " + chapter);
+        
+        // 6. Añade un nuevo valor repetido y otro sin repetir al HashSet.
+        frutas.add("manzana");
+        frutas.add("mandarina");
+        System.out.println(frutas); //no se repetira "manzana"
+        System.out.println(frutas.size());
+        
+        // 7. Elimina uno de los elementos del HashSet.
+        frutas.remove("pera");
+        System.out.println(frutas.size());
+        // 8. Crea un HashMap donde la clave sea un nombre y el valor el número de teléfono. Añade tres contactos.
+        HashMap<String, String> contacto = new HashMap<>();
+        contacto.put("marisa" , "113244-5567");
+        contacto.put("zeyran" , "11325-57789");
+        contacto.put("yildiz" , "11559-83267");
+        System.out.println(contacto.size());
+        System.out.println(contacto);
+        // 9. Modifica uno de los contactos y elimina otro.
+        contacto.put("zeyran", "3445456-58998"); //tambien sirve .replace
+        contacto.remove("marisa");
+        System.out.println(contacto);
+        // 10. Dado un Array, transfórmalo en un ArrayList, a continuación en un HashSet y finalmente en un HashMap con clave y valor iguales.
+        String[] elementos = {"libro", "lapiz", "goma", "papel", "libro"};
+        //** el método Arrays.asList(). Este método toma un array como argumento y devuelve una List
+        //**fija, que es una implementación de ArrayList para la manipulación de los elementos.
+        // **Convertir el array a una List (que es una ArrayList pero no modificable, si no una lista fija)
+        List<String> listaFija = Arrays.asList(elementos);
+        System.out.println(listaFija);
+        //***Para transformar un ArrayList en un HashSet, puedes usar el constructor HashSet 
+        //****que toma una colección como argumento. También puedes usar el método addAll() o la API Stream
+        HashSet<String> duplicadoNo = new HashSet<>(listaFija);
+        System.out.println(duplicadoNo);
+        //***Para convertir un HashSet en un HashMap en Java, debes crear un HashMap y luego
+        //iterar sobre los elementos del HashSet, utilizando cada elemento como clave en el
+        //HashMap y un valor asociado (que puede ser null si no necesitas un valor específico para cada clave
+        //crear un HashMap
+        HashMap<String, String> claveValor = new HashMap<>();
+        //Iterar sobre el HashSet y agregar elementos al HashMap con for-each
+        for (String elemento : duplicadoNo) {
+          claveValor.put(elemento, null);
+        }
+        System.out.println(claveValor);
+        
+        //---------------------------------------------------------------------------------------
+        //----------------------LOOP
+        //loop :
+        // 1. Imprime los números del 1 al 10 usando while.
+        int numeros = 1;
+        while (numeros <= 10) {
+          System.out.println(numeros);
+          numeros++;
+        }
+        // 2. Usa do-while para mostrar todos los valores de un ArrayList.
+        ArrayList<Integer> numb = new ArrayList<>();
+        numb.add(23);
+        numb.add(34);
+        numb.add(56);
+        
+        var index = 0;
+        //***frutas.get(index) obtiene el elemento en la posición index.
+        do {
+          System.out.println(numb.get(index));
+          index++;
+        }while (index < numb.size());
+        //***frutas.size() indica cuántos elementos hay.
+          //***El bucle se repite hasta que se recorren todos los elementos.
+
+        // 3. Imprime los múltiplos de 5 del 1 al 50 usando for.
+        for (int i = 5; i <= 50; i += 5) {
+          System.out.println(i);
+        }
+        
+        for (int i=1; i <= 50; i++) { 
+          // i % 5 == 0 verifica si i es divisible por 5.
+          if (i % 5 == 0) {
+            //"El número i es divisible por 5 sin dejar residuo."O en otras palabras: es múltiplo de 5.
+            System.out.println(i);
+          }
+        }
+        // 4. Recorre un Array de 5 números e imprime la suma total.
+        int[] array = {12, 34, 23, 56, 21};
+        int suma = 0;
+        
+        for(int i=0; i < array.length; i++) {
+          suma += array[i];
+        }
+        System.out.println(suma);
+        //** con for-each
+        int sumas = 0;
+        for(int numero : array) {
+          sumas += numero;
+        }
+          System.out.println(sumas);
+        // 5. Usa un for para recorrer un Array y mostrar sus valores.
+        for (int i=0; i < array.length; i++ ) {
+          System.out.println(array[i]);
+        }
+        // 6. Usa for-each para recorrer un HashSet y un HashMap.
+        HashSet<String> fruta = new HashSet<>();
+        fruta.add("banana");
+        fruta.add("naranja");
+        HashMap<String, Integer> verduras = new HashMap<>();
+        verduras.put("lechuga", 2);
+        verduras.put("zanahoria", 3);
+        for (String compra : fruta) {
+          System.out.println(compra);
+        }
+        //***Para recorrer un HashMap en Java con un bucle for-each, puedes utilizar el 
+        //**método entrySet() para obtener un conjunto de entradas del mapa y luego iterar 
+        //*sobre ese conjunto. También puedes acceder a las claves o valores individualmente
+        //*usando keySet() o values(), respectivamente
+        for (Map.Entry<String, Integer> entrada : verduras.entrySet()) {
+          //**El método entrySet() devuelve un Set que contiene todas las entradas 
+          //**(pares clave-valor) del HashMap.
+          System.out.println(entrada.getKey() + entrada.getValue());
+          //**En el bucle for-each, entrada será de tipo Map.Entry<String, Integer>, donde String es el tipo de la clave y Integer el tipo del valor.
+          //**entrada.getKey() devuelve la clave.
+          //**entrada.getValue() devuelve el valor.
+        }
+        
+        // 7. Imprime los números del 10 al 1 (descendiente) con un bucle for.
+        for (int i = 10; i >= 1; i--) {
+          System.out.println(i);
+        }
+        // 8. Usa continue para saltar los múltiplos de 3 del 1 al 20.
+        for (int i = 1; i <= 20; i++) {
+          if (i % 3 == 0){
+            continue;
+          }
+          System.out.println(i);
+        }
+        // 9. Usa break para detener un bucle cuando encuentres un número negativo en un array.
+        int[] item = {12, 45, -34, 34}; 
+        for (int i = 0; i < item.length; i++){
+          if( item[i] <0) {
+            System.out.println("numero negativo" + item[i]);
+            break;
+          }
+          System.out.println(item[i]);
+        }
+        // 10. Crea un programa que calcule el factorial de un número dado.
+        int multi = 5;
+        long factorial = 1;
+        for(int i= 1; i <= multi; i++ ) {
+          factorial *= i;
+          //**Factorial guarda el valor anterior obtenido y lo multiplica en cada vuelta
+          //**cambia su valor en cada vuelta y lo multiplica hasta el limite de i que es menor= a 4
+        }
+          //**int i = 1
+          /**Empieza con la variable i en 1 (porque el factorial se calcula multiplicando desde 1 hasta el número).
+           i <= numero
+          El bucle se repite mientras i sea menor o igual al número que ingresó el usuario.
+          i++
+          Cada vez que se ejecuta el bucle, i aumenta en 1.**/
+          System.out.println("el factorial del numero 5 es " + factorial);
+          
+          //**version programa interactivo :
+          Scanner scan = new Scanner(System.in);
+          System.out.println("ingresa un numero : ");
+          int field = scan.nextInt(); 
+          long facto = 1;
+          System.out.println(field);
+          if (field <= 0) {
+            System.out.println("es un numero negativo");
+          } else {
+            for (int i = 1; i <= field; i++) {
+              facto *= i;
+            }
+            System.out.println("el factorial del numero " + field + " es : " + facto);
+          }
+          
+          
+        //-----------------------------------------------------------------------------------------
   
   
 
