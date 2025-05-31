@@ -784,7 +784,124 @@ public class Main {
           
           
         //-----------------------------------------------------------------------------------------
-  
+    //-----------------------------------------------------------------------------------------
+        //------------FUNCIONES :
+import java.util.*;  //** IMPORTA TODO 
+
+public class Main {
+    public static void main(String[] args) {
+      bienvenida();   // 👈 acá llamás a la función
+      Scanner scan = new Scanner(System.in);
+      System.out.println("Nombre completo: ");
+      String nombre = scan.nextLine();
+      saludar(nombre);
+      int resultado = resta(15, 9);
+      System.out.println("resultado resta: " + resultado);
+      int number = 23;
+      int multiResultado = elevadoCuadrado(12); 
+      int multiResultado2 = elevadoCuadrado(number);
+      System.out.println("numeros elevados al cuadrado resultados " + multiResultado + " y " + multiResultado2);
+      int numero = 12;
+      numeroParoImpar(numero);
+      int edad = 23;
+      System.out.println(verificacionEdad(edad));
+      int age = 14;
+      System.out.println(verificarAge(age));
+      String word = "ciudadania";
+      int largo = cadenaLong(word);
+      System.out.println(largo);
+      int[] miArray = {3, 5, 7, 9, 2}; //**suma a todos y luego divide eso con el numero de elementos osea 5
+      double media = calcularMedia(miArray);
+      System.out.println("calculo de la media resultado: " + media);
+      int num = 8;
+      int resulta = factorial(num);
+      System.out.println("factorizar: " + num + " resultado: " + resulta);
+      ArrayList<String> miLista = new ArrayList<>();
+      miLista.add("book1");
+      miLista.add("book2");
+      miLista.add("book3");
+      myList(miLista);
+      
+      //**La función main es el punto de entrada del programa. O sea, es lo primero 
+      //**que se ejecuta cuando corrés tu código.
+     //**Podés llamar funciones desde adentro de main, pero NO escribir funciones dentro de main.
+
+    }
+        //funciones :
+        // 1. Crea una función que imprima "¡Te doy la bienvenida al curso de Java desde cero!".
+           public static void bienvenida() {
+             System.out.println("¡Te doy la bienvenida al curso de Java desde cero!");
+           } // 👈 esta función está afuera de `main`, pero dentro de la clase
+           
+           
+        // 2. Escribe una función que reciba un nombre como parámetro y salude a esa persona.
+        public static void saludar(String nombre) {
+          System.out.println("hola! " + nombre);
+        }
+        // 3. Haz un método que reciba dos números enteros y devuelva su resta.
+        public static int resta(int a, int b) {
+          return a - b; 
+        }
+        // 4. Crea un método que calcule el cuadrado de un número (n * n).
+        public static int elevadoCuadrado(int n) {
+          return n * n;
+        }
+        // 5. Escribe una función que reciba un número y diga si es par o impar.
+        public static void numeroParoImpar(int a){
+          if (a % 2 == 0) {
+            System.out.println("es par");
+          } else {
+            System.out.println("es impar");
+          }
+        }
+        // 6. Crea un método que reciba una edad y retorne true si es mayor de edad (y false en caso contrario).
+        public static boolean verificacionEdad(int age) {
+          if (age >= 18) {
+            return true;
+          } else {
+            return false;  //mas larga
+          }
+        }
+        public static boolean verificarAge(int age) {
+          return age >= 18;  //mas corta
+        }
+        // 7. Implementa una función que reciba una cadena y retorne su longitud.
+        public static int cadenaLong(String palabra) {
+          return palabra.length();
+        }
+        //  8. Crea un método que reciba un array de enteros, calcula su media y lo retorna.
+        public static double calcularMedia(int[] numeros) {
+          int suma = 0;
+          for (int num : numeros) {
+            //**num recorre cada numero dentro del array numeros
+            suma += num;
+            //**suma el primero, luego el segundo, luego el tercero...
+          }
+          return (double) suma / numeros.length;
+          //**(double) convierte el resultado a decimal, para que si da 6.5 no lo redondee a 6.
+        }
+        // 9. Escribe un método que reciba un número y retorna su factorial.
+        public static int factorial(int number) {
+          int resultado = 1;
+          for(int i = 1; i <= number; i++) {
+            resultado *= i;
+          }
+          return resultado;
+        }
+        // 10. Crea una función que reciba un ArrayList<String> y lo recorra mostrando cada elemento.
+        public static void myList(ArrayList<String> myLista) {
+          int index = 0;
+          do {
+            System.out.println(myLista.get(index));
+            index++; //*** recorre el ArrayList
+          } while (index < myLista.size()); 
+          
+          for (String elementos : myLista) {
+            //** con for-each : elementos recorre cada elemento de myLista
+            System.out.println(elementos);
+          }
+        }
+
   
 
 
