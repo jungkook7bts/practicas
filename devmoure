@@ -1,15 +1,4 @@
 
-        //clases 
-        // 1. Crea una clase Book con atributos title y author. Crea un objeto y muestra sus datos.
-        // 2. Crea una clase Dog con un método bark() que imprima su sonido.
-        // 3. Añade un constructor a la clase Book que reciba title y author.
-        // 4. Crea una clase Car con atributos brand y model y un método showData().
-        // 5. Crea una clase Student con atributo score y un método que diga si aprobó (mayor o igual a 60).
-        // 6. Crea una clase BankAccount con atributo balance y un método deposit() que sume el saldo.
-        // 7. Crea una clase Rectangle con métodos para calcular el área y el perímetro.
-        // 8. Crea una clase Worker que reciba nombre y salario, y un método para mostrar su salario.
-        // 9. Crea varios objetos Person y guárdalos en un ArrayList.
-        // 10. Crea una clase Product y un método que aplique un descuento sobre su precio.
        //HERENCIA :
        // 1. Crea una clase Vehicle con un método move(). Luego crea una subclase Car que herede de Vehicle y agrega el método honk().
         // 2. Define una clase Person con los atributos name y age. Luego crea una clase Student que agregue el atributo grade y un método study().
@@ -936,6 +925,321 @@ public class Main {
             System.out.println(elementos);
           }
         }
+
+//-----------------------------------------------------------------------------------------
+        //------------CLASES :
+import java.util.*;  //** IMPORTA TODO 
+
+public class Main {
+    public static void main(String[] args) {
+       //** Crear un objeto (una persona)
+       //** Persona → es la clase (como el molde).
+       //**🔹 abi → es una variable de tipo Persona.
+       //**🔹 new Persona() → es lo que crea un nuevo objeto (una nueva "persona").
+        Persona abi = new Persona("abi", 20);
+        //*** Usar el método de la clase
+        abi.saludar();
+        //------------
+        book steve = new book("Steve Jobs", "Apple sheap");
+        steve.datos();
+        //------------ 
+        Dog jason = new Dog("jason");
+        jason.bark();
+        //------------
+        car toyota = new car("toyota", "1890");
+        toyota.showData();
+        //-------------
+        student jeremy = new student(75);
+        System.out.println(jeremy.exam());
+        //------------- 
+        BankAccount liza = new BankAccount(400, 1500.12);
+        System.out.println(liza.deposit());
+        //--------------- 
+        vaso miVaso = new vaso("limonada"); 
+        System.out.println(miVaso.vacio); //sin metodo
+        miVaso.contenido(); //con metodo para mostrar 
+        //---------------
+        cuentaBanco jenni = new cuentaBanco(1000.00); //dinero que ya tenia
+        cuentaBanco jisoo = new cuentaBanco(200.00); //segundo objeto
+        jenni.deposito(890.00);
+        jenni.saldoFinal();
+        jenni.retirarDinero(890);
+        jenni.saldoFinal();
+        jenni.transferirA(jisoo, 600);
+        jenni.saldoFinal(); //total 
+        //------------ 
+        Rectangle miFigura = new Rectangle(5.0, 4.0); 
+        System.out.println("area: " + miFigura.calcularArea());
+        System.out.println("perimetro: " + miFigura.calcularPerimetro());
+        //------------- 
+        worker rose = new worker("rose", 23000.00);
+        rose.workSalary();
+        //--------------- 
+           //**creo un ArrayList que guardara los objetos de la clase 
+        ArrayList<person> contactos = new ArrayList<>();
+          //**creamos objetos person para ArrayList
+        person contac1 = new person("navy", 1122333);
+        person contac2 = new person("ally", 2233322);
+        person contac3 = new person("bella", 112244);
+          //**lo agregamos/guardamos los objetos dentrodel ArrayList
+          //**es decir guardamos instancias de la clase person u objetos creados
+        contactos.add(contac1);
+        contactos.add(contac2);
+        contactos.add(contac3);
+        //**mostramos la info de cada persona
+        for (person cont : contactos) {
+          cont.listaContactos(); 
+        }
+        //----------------  
+           //**zapatillas es un objeto que creamos
+        product zapatillas = new product("zapatillas", 4500);
+        zapatillas.descuento(30); //**aplica el 30% de descuento
+        zapatillas.showValor();
+        //-----------------
+        //--------EJEMPLO CLASE
+ public class Persona {
+          //Atributos(variables)
+          String nombre;
+          int edad;
+          
+        //*** Constructor: se usa para crear objetos con esos atributos
+          public Persona (String nombre, int edad) {
+            this.nombre = nombre;
+            this.edad = edad;
+          }
+         //*** Método: acción que hace la clase
+          public void saludar() {
+            System.out.println("nombre: " + nombre + " edad: " + edad);
+          }
+          
+        }
+        //clases 
+        //** 1. Crea una clase Book con atributos title y author. Crea un objeto y muestra sus datos.
+        class book {
+          //**atributos(variables)
+          String autor;
+          String tittle;
+          
+          //**costructor para crear objetos con esos atributos 
+          public book(String autor, String tittle) {
+            this.autor = autor;
+            this.tittle = tittle;
+          }
+          
+          //***metodo que devuelve los datos 
+          public void datos() {
+            System.out.println("autor: " + autor + " tittle: " + tittle);
+          }
+          
+        }
+        // 2. Crea una clase Dog con un método bark() que imprima su sonido.
+        class Dog {
+          String name;
+          
+          public Dog(String name) {
+            this.name = name;
+          }
+          
+          public void bark() {
+            System.out.println("el perro ladra: gua gua!!");
+          }
+        }
+        // 3. Añade un constructor a la clase Book que reciba title y author.
+        //**ya esta
+        // 4. Crea una clase Car con atributos brand y model y un método showData().
+        class car {
+          String brand;
+          String model;
+          
+          public car(String brand, String model) {
+            this.brand = brand;
+            this.model = model;
+          }
+          
+          public void showData() {
+            System.out.println("presentamos " + brand + " modelo " + model);
+          }
+        }
+        // 5. Crea una clase Student con atributo score y un método que diga si aprobó (mayor o igual a 60).
+        class student {
+          int score;
+          
+          public student(int score) {
+            this.score = score;
+          }
+          
+          public String exam() {
+            if (score >= 60) {
+              return "aprobo";
+            } else {
+              return "desaprobo";
+            }
+          }
+          
+        }
+        // 6. Crea una clase BankAccount con atributo balance y un método deposit() que sume el saldo.
+       class BankAccount {
+         double balance;
+         double saldoActual;
+         
+         public BankAccount(double balance, double saldoActual) {
+           this.balance = balance;
+           this.saldoActual = saldoActual;
+         }
+         
+         public double deposit() {
+           return balance + saldoActual;
+         }
+       }
+       //------- ejemplo de un constructor en accion 
+       class vaso {
+         String vacio;
+         
+         public vaso(String bebida) {
+           vacio = bebida; //le paso una "limonada" y lo guardo en el vaso
+         }
+         
+         public void contenido() {
+           System.out.println("mi bebida es: " + vacio);
+         }
+       }
+       //----------- consigna completa
+       class cuentaBanco {
+         double cuenta; //atributo para el saldo
+         
+         public cuentaBanco(double primerIngreso) {
+           //el constructor solo se usa una vez al nacer el objeto
+           //solo nace con cierta cantidad de dinero
+           cuenta = primerIngreso;
+         }
+         public void deposito(double cantidad) { //metodo para depositar dinero
+         //al parametro amount luego lo llenamos en main con deposito( )
+         //cada metodo hace algo distinto 
+         //este agrega mas dinero despues
+           if (cuenta > 0) {
+             //se usa un if para verificar una condicion 
+             //si queremos usar for solo es si queres repetir algo
+             cuenta += cantidad;
+           }
+         }
+          
+          //**public void retirarDinero(double amount) {
+           //** if(cuenta > 0) {
+            //**  cuenta -= amount;
+            //**}
+         //** }
+         
+         public void retirarDinero(double cantidad) {
+           if(cuenta > 0 && cantidad <= cuenta) {
+             //**menor o igual a cantidad para que saque solo lo que tiene al limite
+             cuenta -= cantidad;
+             System.out.println("se retiro este monto: " + cantidad);
+           } else {
+             System.out.println("sin dinero suficiente");
+           }
+         }
+          
+          //public void transferirA(double cuenta2) {
+           // if(cuenta > 0) {
+            //  retiro = cuenta2;
+             // System.out.println("transferiste a cuenta2: " + cuenta2);
+            //}
+          //}
+          
+          //**metodo para trasferir a otra cuenta
+          public void transferirA(cuentaBanco otraCuenta, double cantidad) {
+            //** creamos un segundo objeto dentro de la clase cuentaBanco
+            //**usamos de nuevo el parametro cantidad nuestra cantidad
+            if(cuenta > 0 && cantidad <= cuenta) {
+              this.cuenta -= cantidad; //llamo a mi cuenta y descuento cantidad
+              otraCuenta.deposito(cantidad); //menciono a nuevo objeto y reutilizo un metodo
+              //deposito cantidad que habia descontado a mi cuenta 
+              System.out.println("trasferencia con exito: " + cantidad);
+            } else {
+              System.out.println("trasferencia fallida o monto insuficiente");
+            }
+          }
+          
+          public void saldoFinal() { //metodo para mostrar el dinero de la cuenta
+           System.out.println("cuenta contenido: " + cuenta);
+          }
+          
+       }
+       
+        // 7. Crea una clase Rectangle con métodos para calcular el área y el perímetro.
+        class Rectangle {
+          double altura;
+          double base;
+          
+          public Rectangle(double altura, double base) {
+            this.altura = altura;
+            this.base = base;
+            //. El área se mide en unidades cuadradas (como cm², m²), 
+            //y el perímetro en unidades lineales (como cm, m). 
+          }
+          
+          public double calcularArea() {
+            return altura * base;
+          }
+          
+          public double calcularPerimetro() {
+              return 2 * (altura + base);
+          }
+          
+        }
+        // 8. Crea una clase Worker que reciba nombre y salario, y un método para mostrar su salario.
+        class worker {
+          String nombre;
+          double salario;
+          
+          public worker(String nombre, double salario) {
+            this.nombre = nombre;
+            this.salario = salario;
+          }
+          
+          public void workSalary() {
+            System.out.println("salario del mes: " + salario + " worker: " + nombre);
+          }
+        }
+        // 9. Crea varios objetos Person y guárdalos en un ArrayList.
+        class person {
+          String name;
+          int age;
+          
+          public person(String name, int age) {
+            this.name = name;
+            this.age = age;
+          }
+          //metodo para mostrar info
+          public void listaContactos() {
+            System.out.println(name + " : " + age);
+          }
+          
+        }
+        // 10. Crea una clase Product y un método que aplique un descuento sobre su precio.
+        class product {
+          String producto;
+          double precio;
+          
+          public product(String producto, double precio) {
+            this.producto = producto;
+            this.precio = precio;
+          }
+            
+          public void descuento(double porcentaje) {
+            double descuento = precio * (porcentaje/100);
+            precio -= descuento;
+          }
+          
+          public void showValor() {
+            System.out.println("producto " + producto + " precio $" + precio);
+          }
+          
+        }
+
+//-----------------------------------------------------------------------------------------------------------------------
+
+        
 
   
 
