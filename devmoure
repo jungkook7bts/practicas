@@ -1238,16 +1238,354 @@ public class Main {
         }
 
 //-----------------------------------------------------------------------------------------------------------------------
+-------- HERENCIA : estan una al lado de otro con su respectivo resultado 
+import java.util.*;
 
-        
+public class Main {
+    public static void main(String[] args) {
+      Car myCar = new Car();
+       //**car tiene todo heredado incluso lo de Vehicle
+      myCar.move();
+      myCar.honk();
+//-----------
+         public class Vehicle {
+      //HERENCIA :
+       // 1. Crea una clase Vehicle con un método move(). Luego crea una subclase Car que herede de Vehicle y agrega el método honk().
+           //**es un metodo no una clase 
+        public void move() {
+          System.out.println("acelerar");
+        }
+      }
+ //----- CLASES HEREDADAS 
+   //**subclase o clase hija con el metodo nuevo adentro
+        public class Car extends Vehicle {
+           void honk() {
+          System.out.println("hace pib pib");
+          }
+        }
+  //---------------------------------------
+2.
+public class Main {
+    public static void main(String[] args) {
+     Student jake = new Student("jake", 14, "6°");
+     jake.Study();
+//--------
+   // 2. Define una clase Person con los atributos name y age. Luego crea una clase Student que agregue el atributo grade y un método study().
+        class Person {
+          String name;
+          int age;
+          
+          public Person(String name, int age){
+            this.name = name;
+            this.age = age;
+          }
+        }
+//----------
+ class Student extends Person {
+        String grade;
+         
+         public Student(String name, int age, String grade){
+           super(name, age);
+           //*con super estoy llamando a los atributos de la clase padre para que se mantengan
+           this.grade = grade;
+         }
+         
+         public void Study() {
+           System.out.println("el alumno " + name + " esta en el grado: " + grade + ", edad; " + age + " años");
+         }
+       }
+ //----------------------------------------
+
+public class Main {
+    public static void main(String[] args) {
+    Cat mittens = new Cat();
+    mittens.makeSound();
+//------------
+        // 3. Crea una clase Animal con el método makeSound(). Haz que Dog diga “Woof” y Cat diga “Meow” sobrescribiendo ese método.
+        class Animal {
+          public void makeSound() {
+            System.out.println("Woof Woof");
+          }
+        }
+//----------
+   class Cat extends Animal {
+          @Override
+          public void makeSound() {
+            System.out.println("Meow Meow");
+            //**Sobreescribir un método significa redefinir un método heredado de una clase 
+            //**padre, cambiando su comportamiento en la clase hija.
+          }
+        }
+//--------------------------------------
+
+public class Main {
+    public static void main(String[] args) {
+      Manager junior = new Manager("jonn", 23000, "IT");
+    junior.data();
+//------------
+
+        // 4. La clase Employee tiene los atributos name y salary. Manager hereda de Employee y agrega el atributo department.
+        class Employee {
+          String name;
+          double salary;
+          
+          public Employee(String name, double salary){
+            this.name = name;
+            this.salary = salary;
+          }
+        }
+//------------
+ class Manager extends Employee {
+         String department;
+         
+         public Manager(String name, double salary, String department) {
+           super(name, salary);
+           this.department = department;
+         }
+         
+         public void data(){
+           System.out.println("empleado: " + name);
+           System.out.println("salario: " + salary);
+           System.out.println("departamento empresarial: " + department);
+         }
+       }
+ //-------------------------------------------------
+    //---CLASE MAINpublic class Main {
+    public static void main(String[] args) {
+   Circulo area = new Circulo(5);
+   Rectangulo area1 = new Rectangulo(4, 6);
+   System.out.println("circulo area: " + area.calculateArea());
+   System.out.println("rectangulo: " + area1.calculateArea());
+//---------------------------- 
+ // 5. Crea una clase abstracta Shape con un método calculateArea(). Luego implementa ese método en Circle y Rectangle.
+         abstract class Shape {
+            //**Una clase abstracta en Java es una clase que no se puede instanciar (o sea,
+            //no podés crear objetos directamente de ella) y que sirve como modelo para otras
+            //**clases.
+            abstract double calculateArea(); //*Sin modificador = "package-private"
+             } //* tiene acceso por defecto
+             //*El método calculateArea() no es private, es "package-private".
+             //*Por eso, en la subclase no tenés que poner public sí o sí, podés dejarlo igual.
+              //*"Como el método de la clase padre no es público, la subclase puede mantener el mismo nivel de acceso."
+             //**(sin modificador)"package-private" --> private	Solo clases del mismo paquete
+             //Esto NO es private. Lo que está pasando es que no se puso ningún modificador, 
+             //**y en Java eso se llama package-private.
+              //......
+            //***Se usa para definir una estructura base que las clases hijas deben seguir,
+            //pero dejando partes incompletas para que las completen esas subclases.
+//---------------------
+
+       class Circulo extends Shape {
+         double radius;
+         
+         public Circulo(double radius){
+           this.radius = radius;
+         }
+         
+         @Override
+          double calculateArea() {
+              return Math.PI * radius * radius;
+            }
+       }
+       class Rectangulo extends Shape {
+         double altura;
+         double ancho;
+         
+         public Rectangulo(double altura, double ancho){
+           this.altura = altura;
+           this.ancho = ancho;
+         }
+         
+         @Override
+          double calculateArea() {
+             return altura * ancho;
+            }
+       }
+     //--------------------------------------------------------------------------
+    Eager aguila = new Eager();   
+   aguila.fly(); //**"Primero hacé lo que ya hacías... y después hacé esto nuevo que quiero agregar."
+   //------------
+   // 6. Crea una clase Bird con el método fly(). Luego crea Eagle que sobrescriba fly() pero también llame al método original con super.fly().
+        class Bird {
+           
+           public void fly(){
+             System.out.println("fly fly little bird");
+             //**Si no ponés super.fly(), entonces se ejecuta solo el nuevo método que 
+             //**escribiste en la subclase, y el original queda ignorado.
+           }
+        }
+//----------------
+       
+       class Eager extends Bird {
+         
+         @Override
+         public void fly() {
+             super.fly();
+             System.out.println("fly fly little eager");
+           }
+           //**querés usar parte del comportamiento original antes o después de tu versión personalizada.
+          //**Ahí es donde entra super.
+       }
+      //----------------------------------  
+      //***Java te deja sobreescribir un método con la misma visibilidad
+      //***o una más amplia, pero nunca con una visibilidad más baja.
+      //** Una clase padre no puede ser "privada" si está siendo heredada.
+      //**Lo que sí puede ser privado es un método dentro de la clase. 
+      //Pero si el método es private, no se puede heredar ni sobreescribir.
+     //------------------------------------- 
+   Phone dispositivo = new Phone();
+//--------
+// 7. Haz una clase Device con un constructor que imprima “Device created”. Luego crea Phone que herede de Device y en su constructor imprima “Phone ready”.
+        class Device {
+          
+          public Device(){ //**esto es un constructor que imprime
+            System.out.println("Device created");
+          }
+          //**Al crear un Phone, automáticamente se llama primero al constructor de Device (la clase padre).
+            //**Después se ejecuta el constructor de Phone.
+            //*los constructores sirven para:
+            //** Inicializar valores.
+             //*Mostrar mensajes.
+            ///**Llamar a métodos o preparar el entorno del objeto.
+        }
+//----------
+     class Phone extends Device {
+
+        public Phone(){ //**esto es un constructor que imprime
+            System.out.println("Phone ready");
+          }
+     }
+    //----------------------------------------
+ SavingsAccount myAccount = new SavingsAccount(1000, 0.05);
+   myAccount.deposit(20000);
+   myAccount.withdraw(15000);
+  myAccount.addInterest();
+  //--------------
+        // 8. Account tiene un saldo y métodos para deposit() y withdraw(). SavingsAccount hereda y agrega un método addInterest().
+        class Account {
+          double saldo;
+          
+          public Account(double ingreso) {
+            this.saldo = ingreso; //**el primer ingreso dentro que yo ponga
+          }
+          
+          public void deposit(double cantidad) {
+              saldo += cantidad;
+              System.out.println("depositaste: " + cantidad + " saldo total: " + saldo);
+          }
+          
+          public void withdraw(double cantidad) {
+            if(saldo > 0 && cantidad <= saldo) {
+              saldo -= cantidad;
+              System.out.println("withdraw: " + cantidad + " saldo actual: " + saldo);
+            } else {
+              System.out.println("sin saldo suficiente");
+            }
+          }
+          
+        }
+//----------------
+  class SavingsAccount extends Account {
+      double interest;
+      
+      public SavingsAccount(double ingreso, double interest){
+        super(ingreso);
+        this.interest = interest;
+      }
+      
+      public void addInterest(){
+        double interesGanado = saldo * interest;
+        saldo += interesGanado;
+        System.out.println("interes ganado: " + interesGanado + " saldo actual: " + saldo);
+      }
+      
+    }
+  //---------------------------------------
+  Vehicle1 vehiculo = new Vehicle1();
+   Vehicle1 auto = new Car1();
+   Vehicle1 bici = new Bike();
+   Vehicle1 camion = new Truck();
+   camion.describe();
+   auto.describe();
+   bici.describe();
+   vehiculo.describe();
+//---------
+ // 9. Crea una clase Vehicle y tres subclases: Car, Bike y Truck, cada una con un método describe() sobrescrito.
+        class Vehicle1 {
+          
+          public void describe(){
+            System.out.println("vehiculo hace broom");
+          }
+        }
+//--------
+  class Car1 extends Vehicle1 {
+    @Override
+     public void describe(){
+            System.out.println("auto tiene 4 ruedas");
+          }
+  }
+  class Bike extends Vehicle1 {
+    @Override
+    public void describe(){
+            System.out.println("bici hace chic chic y tiene 2 ruedas");
+          }
+  }
+  class Truck extends Vehicle1{
+    @Override
+    public void describe(){
+            System.out.println("camion hace broom y es enorme");
+          }
+  }
+//----------------------------------------
+
+   ArrayList<Animals> animals = new ArrayList<>();
+           //**<Animal clase> solo acepta objetos 
+           //**tienes que pasarle la clase con los objetos para que funcione
+   animals.add(new Dogs()); //**agrega la instancia osea el objeto al ArrayList
+   animals.add(new Cats()); //**cuyo objeto pertenece a una clase
+   animals.add(new Birds()); //*ArrayList con objetos de distintas subclases.
+   
+   //**recorre el arraylist 
+   for(Animals r : animals) {
+     //**Animal viene de la clase principal 
+     //*"Para cada elemento del tipo Animals dentro de la lista animals, llamalo r"
+     r.makeaSound();
+     //*muestra cada sonido de cada objeto dentro del arraylist
+   }
+  //------------
+ 
+        // 10. Crea un ArrayList<Animal> que contenga instancias de Dog, Cat y Bird. Recorre la lista y llama a makeSound().
+        class Animals {
+          public void makeaSound() {
+            System.out.println("el animal hace...");
+            //**con instancias se refiere a objetos lo cuales son : dog, cat y bird
+          }
+        }
+//----------------
+
+  class Dogs extends Animals {
+    @Override
+    public void makeaSound() {
+            System.out.println("el animal hace gua gua");
+          }
+  }
+  
+  class Cats extends Animals {
+    @Override
+    public void makeaSound() {
+            System.out.println("el animal hace meow meow");
+          }
+  }
+  
+  class Birds extends Animals {
+    @Override
+    public void makeaSound() {
+            System.out.println("el animal hace pio pio");
+          }
+  }
+//-------------------------------------
 
   
-
-
-
-
-
-
 
 
 
