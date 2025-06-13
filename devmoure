@@ -1585,7 +1585,359 @@ public class Main {
   }
 //-------------------------------------
 
+  //---------------------------------------------------------------------------------------------
+//---------------------POLIMORFISMO :
+   //una misma interfaz, múltiples comportamientos 🎭✨
+   //Es cuando una misma variable puede representar muchos tipos de objetos diferentes y llamar al método correcto según el objeto real.
+import java.util.*;
+   //*🔁 Polimorfismo sería si:
+   //*Usaras herencia y sobrescribieras (override) el método greet() en una subclase,
+   //*cambiando su comportamiento. Eso es polimorfismo en tiempo de ejecución.
+
+
   
+   // 1. Crea una clase Animal con el método makeSound(). Luego crea subclases Dog, Cat y Cow que sobrescriban ese método con sonidos diferentes. Llama al método desde una lista de Animal.
+  class Dog extends Animal {
+    @Override
+     public void makeSound() {
+       System.out.println("el perro hace gua gua!!");
+     }
+   }
+   class Cat extends Animal {
+    @Override
+     public void makeSound() {
+       System.out.println("el cat hace meow meow!!");
+     }
+   }
+   class Cow extends Animal {
+    @Override
+     public void makeSound() {
+       System.out.println("la vaca hace mou mou!!");
+     }
+   }
+  // 2. Crea una clase Shape con el método calculateArea(). Luego implementa subclases Circle y Rectangle con sus propias fórmulas. Usa una lista de Shape para recorrer e imprimir el área de varias figuras.
+  class Circulo extends Shape {
+    double radius;
+    
+    public Circulo(double radius){
+      this.radius = radius;
+    }
+    
+    @Override
+    public double calcularArea() {
+     return Math.PI * radius * radius;
+    }
+  }
+  class Rectangulo extends Shape{
+    double altura;
+    double anchura;
+    
+    public Rectangulo(double altura, double anchura){
+      this.altura = altura;
+      this.anchura = anchura;
+    }
+    
+        @Override
+    public double calcularArea() {
+     return altura * anchura;
+      }
+    }
+  
+  
+  
+  // 3. Crea una clase Printer con varios métodos print() sobrecargados que acepten diferentes tipos de parámetros (String, int, double). Llama a cada uno desde main.
+       //**pero una trabaja con enteros y la otra con decimales. Eso es sobrecarga de funciones.
+       //**En resumen, sobrecarga = misma función con formas diferentes de comportarse según lo que recibe. 
+
+  // 4. Crea una clase Greeter con dos métodos greet(): uno que salude con “Hello”, y otro que reciba un nombre y salude con “Hello, [nombre]”.
+ 
+  // 5. Crea una clase Vehicle con un método start(). Luego crea Car, Bike y Truck que sobrescriban ese método. Recorre una lista ArrayList<Vehicle> para llamar a start() en cada uno.
+      class Car extends Vehicle {
+        @Override
+         public void start(){
+          System.out.println("arranca");
+         }
+      }
+      class Bike extends Vehicle {
+        @Override
+         public void start(){
+          System.out.println("rueda");
+         }
+      }
+      class Truck extends Vehicle {
+        @Override
+         public void start(){
+          System.out.println("enciende");
+         }
+      }
+  // 6. Crea una clase Notification con método send(), y subclases EmailNotification, SMSNotification. Luego crea una función sendNotification(Notification n) que reciba cualquier tipo y lo ejecute.
+    class EmailNotification extends Notification{
+      
+       //*public EmailNotification(String contacto, String numero) {
+        //**super(contacto, numero); // ✅ Llama al constructor de la superclase
+      @Override
+     public void send(){
+     System.out.println("tienes un correo sin leer");
+   }
+ }
+ class SMSNotification extends Notification{
+        //**public SMSNotification(String contacto, String numero) {
+          //**super(contacto, numero); // ✅ Llama al constructor de la superclase
+      @Override
+     public void send(){
+     System.out.println("te llego un SMS");
+     }
+   }
+ 
+  // 7. Crea una función showAnimalType(Animal animal) que imprima el tipo de animal. Pasa diferentes subclases (Dog, Cat, Horse) para que cada una imprima su tipo con su propio getType() sobrescrito.
+  class Dog1 extends Animales {
+     @Override
+     public void getType(){
+     System.out.println("el tipo de animal es un perro");
+   }
+  }
+  class Cat2 extends Animales {
+     @Override
+     public void getType(){
+     System.out.println("el tipo de animal es un gato");
+   }
+  }
+  class Horse extends Animales {
+     @Override
+     public void getType(){
+     System.out.println("el tipo de animal es un caballo");
+   }
+  }
+  // 8. Crea una clase Converter con métodos convert(int), convert(double), y convert(String) que devuelvan diferentes formatos de texto.
+   // 9. Crea una clase Product con el método getPrice(). Luego, Book y Electronic deben sobrescribirlo con su propia lógica de descuento. Recorre una lista de Product e imprime el precio final de cada uno.
+  class Book extends Product{
+    public Book(String product, double price){
+      super(product, price);
+    }
+    @Override
+    public void getPrice(double porcentage){
+      var discount = price *(porcentage/100);
+      var priceFinal = price - discount;
+      System.out.println("producto: " + product + ", precio con descuento: " + priceFinal);
+    }
+  }
+  class Electronic extends Product{
+     public Electronic(String product, double price){
+      super(product, price);
+    }
+    @Override
+    public void getPrice(double porcentage){
+      var discount = price *(porcentage/100);
+      var priceFinal = price - discount;
+      System.out.println("producto: " + product + ", precio con descuento: " + priceFinal);
+    }
+    }
+  
+  // 10. Crea una clase Character con método attack(). Luego crea subclases Warrior, Archer, Mage con ataques diferentes. En main, crea un array de Character y llama a attack() para cada uno.
+        class Warrior extends Character{
+          @Override
+           public void attack(){
+            System.out.println("Guerrero : espada afilada con guantes de metal");
+          }
+        }
+        class Archer extends Character{
+          @Override
+           public void attack(){
+            System.out.println("Arquero: super punteria con alcance infinito");
+          }
+        }
+        class Mage extends Character{
+          @Override
+           public void attack(){
+            System.out.println("Mago: sombrero magico con varita como harri potter");
+          }
+        }
+
+
+  public class Main {
+    public static void main(String[] args) {
+//polimorfismo :
+   // 1. Crea una clase Animal con el método makeSound(). Luego crea subclases Dog, Cat y Cow que sobrescriban ese método con sonidos diferentes. Llama al método desde una lista de Animal.
+   Animal[] lista = {
+   //**esto es un array
+   new Dog(),
+   new Cat(),
+   new Cow()
+   };
+   for(Animal a : lista){
+     a.makeSound();
+   }
+  // 2. Crea una clase Shape con el método calculateArea(). Luego implementa subclases Circle y Rectangle con sus propias fórmulas. Usa una lista de Shape para recorrer e imprimir el área de varias figuras.
+  ArrayList<Shape> list = new ArrayList<>();
+   list.add(new Circulo(10));
+   list.add(new Rectangulo(6, 8));
+
+  for(Shape recorrer : list){
+    System.out.println(recorrer.calcularArea());
+  }
+  // 3. Crea una clase Printer con varios métodos print() sobrecargados que acepten diferentes tipos de parámetros (String, int, double). Llama a cada uno desde main.
+  Printer metodos = new Printer();
+     //**Java elige automáticamente cuál ejecutar según el tipo del argumento que le pasás.
+     //**Es un ejemplo clásico de sobrecarga de métodos.
+  System.out.println(metodos.Print(4, 5));
+  System.out.println(metodos.Print(4.5, 6.2));
+  System.out.println(metodos.Print("hola"));
+  // 4. Crea una clase Greeter con dos métodos greet(): uno que salude con “Hello”, y otro que reciba un nombre y salude con “Hello, [nombre]”.
+  Greeter saludo = new Greeter();
+  saludo.greet();
+  saludo.greet("yildiz");
+  // 5. Crea una clase Vehicle con un método start(). Luego crea Car, Bike y Truck que sobrescriban ese método. Recorre una lista ArrayList<Vehicle> para llamar a start() en cada uno.
+    ArrayList<Vehicle> metod = new ArrayList<>();
+    metod.add(new Car());
+    metod.add(new Bike());
+    metod.add(new Truck());
+    for(Vehicle r : metod){
+      r.start();
+    }
+  // 6. Crea una clase Notification con método send(), y subclases EmailNotification, SMSNotification. Luego crea una función sendNotification(Notification n) que reciba cualquier tipo y lo ejecute.
+    Notification gmail = new EmailNotification();
+    Notification sms = new SMSNotification();
+    extraNotification.sendNotification(gmail);
+    extraNotification.sendNotification(sms); // Muestra: Enviando notificación por SMS.
+    //** Porque aunque email y sms son de tipo Notification, internamente son EmailNotification y SMSNotification.
+    //*Entonces al llamar send(), Java ejecuta el método de la subclase correcta → polimorfismo puro ✨
+  
+  // 7. Crea una función showAnimalType(Animal animal) que imprima el tipo de animal. Pasa diferentes subclases (Dog, Cat, Horse) para que cada una imprima su tipo con su propio getType() sobrescrito.
+  Animales dog = new Dog1();
+  Animales cat = new Cat2();
+  Animales horse = new Horse();
+  animalType.showAnimalType(dog);
+  animalType.showAnimalType(cat);
+  animalType.showAnimalType(horse);
+  // 8. Crea una clase Converter con métodos convert(int), convert(double), y convert(String) que devuelvan diferentes formatos de texto.
+  Converte tiposDatos = new Converte();
+  tiposDatos.convert(5, 6);
+  tiposDatos.convert(5.3, 6.8);
+  tiposDatos.convert("caba", "llo");
+   // 9. Crea una clase Product con el método getPrice(). Luego, Book y Electronic deben sobrescribirlo con su propia lógica de descuento. Recorre una lista de Product e imprime el precio final de cada uno.
+  ArrayList<Product> stockMarket = new ArrayList<>();
+  stockMarket.add(new Book("mujercitas", 560));
+  stockMarket.add(new Electronic("netbook ultra", 450.000));
+  stockMarket.add(new Electronic("Apple 14", 578.100));
+  for(Product a : stockMarket){
+    a.getPrice(0.2);
+  }
+  // 10. Crea una clase Character con método attack(). Luego crea subclases Warrior, Archer, Mage con ataques diferentes. En main, crea un array de Character y llama a attack() para cada uno.
+     Character[] powerPotential = {
+       new Warrior(),
+       new Archer(),
+       new Mage()
+     };
+     for(Character p : powerPotential){
+       p.attack();
+     }
+}
+}
+//--------------- CLASES PADRES : 
+public class Animal {
+    void makeSound() {
+        System.out.println("Some sound");
+    }
+}
+
+abstract class Shape {
+  public abstract double calcularArea();
+  //**Usa una clase abstracta Shape que obliga a las subclases a implementar el método calculateArea()
+}
+
+class Printer{
+  
+  public int Print(int a, int b){
+    return a + b;
+    //*System.out.println("esto es un numero: " + c);
+  }
+  
+    public double Print(double a, double b){
+    return a + b;
+    //* System.out.println("esto es un double: " + c);
+  }
+  
+    public String Print(String a){
+      return a;
+      //* System.out.println("esto es un String: " + b);
+    }
+}
+
+ // 4. Crea una clase Greeter con dos métodos greet(): uno que salude con “Hello”, y otro que reciba un nombre y salude con “Hello, [nombre]”.
+  class Greeter{
+    public void greet(){
+      System.out.println("hello");
+    }
+    
+    public void greet(String nombre){
+      System.out.println("hello, " + nombre);
+    }
+  }
+  // 5. Crea una clase Vehicle con un método start(). Luego crea Car, Bike y Truck que sobrescriban ese método. Recorre una lista ArrayList<Vehicle> para llamar a start() en cada uno.
+  class Vehicle{
+    public void start(){
+      System.out.println("empieza");
+    }
+  }
+  // 6. Crea una clase Notification con método send(), y subclases EmailNotification, SMSNotification. Luego crea una función sendNotification(Notification n) que reciba cualquier tipo y lo ejecute.
+ class Notification{
+
+   public void send(){
+     System.out.println("enviado");
+   }
+ }
+ class extraNotification {
+   public static void sendNotification(Notification n){
+     n.send(); // Polimorfismo: ejecuta el método correcto según el tipo real del objeto
+     //Java sabe que cualquier objeto que reciba como n va a tener un método send(), porque ese método existe en la clase base.
+   }
+ }
+  // 7. Crea una función showAnimalType(Animal animal) que imprima el tipo de animal. Pasa diferentes subclases (Dog, Cat, Horse) para que cada una imprima su tipo con su propio getType() sobrescrito.
+ class Animales {
+   public void getType(){
+     System.out.println("el tipo de animal");
+   }
+ }
+  class animalType {
+    public static void showAnimalType(Animales animal){
+    animal.getType();
+    }
+  }
+  // 8. Crea una clase Converter con métodos convert(int), convert(double), y convert(String) que devuelvan diferentes formatos de texto.
+  class Converte {
+    public void convert(int a, int b){
+      System.out.println(a + b);
+    }
+    public void convert(double a, double b){
+      System.out.println(a + b);
+    }
+    public void convert(String a, String b){
+      System.out.println(a + b);
+    }
+  }
+     // 9. Crea una clase Product con el método getPrice(). Luego, Book y Electronic deben sobrescribirlo con su propia lógica de descuento. Recorre una lista de Product e imprime el precio final de cada uno.
+     abstract class Product{
+      String product;
+      double price;
+      
+      public Product(String product, double price){
+      this.product = product;
+      this.price = price;
+      }
+      
+     public abstract void getPrice(double porcentage);
+  }
+  // 10. Crea una clase Character con método attack(). Luego crea subclases Warrior, Archer, Mage con ataques diferentes. En main, crea un array de Character y llama a attack() para cada uno.
+        class Character{
+          public void attack(){
+            System.out.println("super ice super vuela");
+          }
+        }
+        
+        
+        
+        
+        
 
 
 
